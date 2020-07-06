@@ -5,6 +5,7 @@ namespace CollaborateurBundle\Controller;
 use CollaborateurBundle\Entity\Collab;
 use CollaborateurBundle\Entity\Role;
 use CollaborateurBundle\Form\CollabType;
+use CollaborateurBundle\Form\RoleType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -113,7 +114,7 @@ class DefaultController extends Controller
             return $this->redirectToRoute('index-collab');
         }
 
-        return $this->render('editrole.html.twig', [
+        return $this->render('edit.html.twig', [
             'form' => $roleForm->createView()
         ]);
     }
