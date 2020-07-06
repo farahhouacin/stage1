@@ -8,8 +8,6 @@
         {{ projet.dateDebut|date('d/m/Y') }}<br>
         {{ projet.dateButoir|date('d/m/Y') }}<br>
 
-
-
         <a href="{{ path('detailsprojet-projet', {id:projet.id}) }}"> Détails</a><br><br>
     {% endfor %}
 
