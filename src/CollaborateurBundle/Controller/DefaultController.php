@@ -25,13 +25,6 @@ class DefaultController extends Controller
         ]);
     }
 
-    /**
-     * @Route(name="hari")
-     */
-    public function indexHariCollab()
-    {
-        $bob = 'coucou';
-    }
 
     /**
      * @Route ("/new", name="new-collab")
