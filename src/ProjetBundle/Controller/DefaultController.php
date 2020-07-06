@@ -19,7 +19,7 @@ class DefaultController extends Controller
     public function indexProjet()
     {
         $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
-        return $this->render('indexprojet.html.twig', [
+        return $this->render('index.html.twig', [
             'projets' => $projets
         ]);
     }
