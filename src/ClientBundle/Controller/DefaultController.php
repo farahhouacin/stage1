@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/client")
  */
-
 class DefaultController extends Controller
 {
     /**
@@ -24,6 +23,7 @@ class DefaultController extends Controller
             'clients' => $clients
         ]);
     }
+
     /**
      * @Route ("/new", name="new-client")
      */
@@ -42,6 +42,7 @@ class DefaultController extends Controller
             'form' => $clientForm->createView()
         ]);
     }
+
     /**
      * @Route("/edit/{id}", name="edit-client")
      * @param $id
@@ -75,5 +76,19 @@ class DefaultController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('index-client');
+    }
+
+    /**
+     * @Route("/detailsclient/{id}", name="details-client")
+     */
+    public function detailsClient($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $client = $em->getRepository('ClientBundle:Client')->find($id);
+        $clientForm = $this->createForm(ClientType::class, $client);
+
+        return $this->render('detailsclient.html.twig', [
+            'form' => $clientForm->createView()
+        ]);
     }
 }

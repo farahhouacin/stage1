@@ -19,7 +19,7 @@ class DefaultController extends Controller
     public function indexProjet()
     {
         $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
-        return $this->render('indexprojet.html.twig', [
+        return $this->render('index.html.twig', [
             'projets' => $projets
         ]);
     }
@@ -72,5 +72,19 @@ class DefaultController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('index-projet');
+    }
+
+    /**
+     * @Route("/detailsprojet/{id}", name="details-projet")
+     */
+    public function detailsProjet($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $projet = $em->getRepository('ProjetBundle:Projet')->find($id);
+        $projetForm = $this->createForm(ProjetType::class, $projet);
+
+        return $this->render('detailsprojet.html.twig', [
+            'form' => $projetForm->createView()
+        ]);
     }
 }

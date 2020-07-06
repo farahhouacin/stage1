@@ -130,4 +130,19 @@ class DefaultController extends Controller
 
         return $this->redirectToRoute('index-collab');
     }
+
+    /**
+     * @Route("/detailscollab/{id}", name="details-collab")
+     */
+    public function detailsCollab($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $collab = $em->getRepository('CollaborateurBundle:Collab')->find($id);
+        $collabForm = $this->createForm(CollabType::class, $collab);
+
+        return $this->render('detailscollab.html.twig', [
+            'form' => $collabForm->createView()
+        ]);
+    }
+
 }
