@@ -73,4 +73,18 @@ class DefaultController extends Controller
 
         return $this->redirectToRoute('index-projet');
     }
+
+    /**
+     * @Route("/detailsprojet/{id}", name="details-projet")
+     */
+    public function detailsProjet($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $projet = $em->getRepository('ProjetBundle:Projet')->find($id);
+        $projetForm = $this->createForm(ProjetType::class, $projet);
+
+        return $this->render('detailsprojet.html.twig', [
+            'form' => $projetForm->createView()
+        ]);
+    }
 }
