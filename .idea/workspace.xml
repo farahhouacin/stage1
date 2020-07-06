@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ddc7060-96df-4bdc-93f4-93c01717ba6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/CollaborateurBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CollaborateurBundle/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +69,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -97,7 +98,7 @@
       <workItem from="1593675529404" duration="9449000" />
       <workItem from="1593759726370" duration="5411000" />
       <workItem from="1594021495742" duration="2990000" />
-      <workItem from="1594026942387" duration="59000" />
+      <workItem from="1594026942387" duration="311000" />
     </task>
     <servers />
   </component>
