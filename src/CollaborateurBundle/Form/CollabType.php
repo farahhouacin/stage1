@@ -18,10 +18,18 @@ class CollabType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('passwordCollab', PasswordType::class)
-            ->add('emailCollab', EmailType::class)
-            ->add('nameCollab', TextType::class)
-            ->add('firstnameCollab', TextType::class)
+            ->add('nameCollab', TextType::class, [
+                'label' => 'Nom'
+            ])
+            ->add('firstnameCollab', TextType::class,[
+                'label' => 'Prénom'
+            ])
+            ->add('emailCollab', EmailType::class, [
+                'label' => 'Email'
+            ])
+            ->add('passwordCollab', PasswordType::class,[
+                'label'=> 'Mot de passe'
+            ])
             ->add('save', SubmitType::class,  [
             'label' => 'Ajouter un collaborateur',
             'attr' => [
