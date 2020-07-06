@@ -18,10 +18,12 @@ class RoleType extends AbstractType
         $builder
             ->add('nomRole')
             ->add('save', SubmitType::class, [
-                'label' => 'Ajouter un rôle',
-                'attr' => [
-                    'class' => 'btn'
-                ];
+                    'label' => 'Ajouter un rôle',
+                    'attr' => [
+                        'class' => 'btn'
+                    ]
+                ]
+            );
     }
 
     /**
@@ -33,6 +35,7 @@ class RoleType extends AbstractType
             'data_class' => 'CollaborateurBundle\Entity\Role'
         ));
     }
+
     /**
      * {@inheritdoc}
      */
