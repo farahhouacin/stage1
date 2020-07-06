@@ -1,0 +1,16 @@
+client:
+    resource: "@ClientBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+projet:
+  resource: "@ProjetBundle/Controller/"
+  type:     annotation
+  prefix:   /
+
+collaborateur:
+  resource: "@CollaborateurBundle/Controller/"
+  type:     annotation
+  prefix:   /
+
+

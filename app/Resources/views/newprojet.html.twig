@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block nom_projet %}
+    Nouveau projet
+{% endblock %}
+
+{%  block body %}
+
+    {{form(form)}}
+
+    {#<input type="submit" name="Envoyer">#}
+
+    <a href="{{ path('index-projet') }}">Accueil</a>
+
+{% endblock %}

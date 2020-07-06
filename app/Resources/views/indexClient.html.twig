@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for client in clients %}
+
+        {{ client.id }}<br>
+        {{ client.nomClient }}<br>
+        {{ client.prenomClient }}<br>
+        {{ client.numClient }}<br>
+        {{ client.emailClient }}<br>
+
+
+        <a href="{{ path('detailsclient-client', {id:client.id}) }}"> Détails</a><br><br>
+
+
+    {% endfor %}
+
+
+{% endblock %}

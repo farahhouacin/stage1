@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block nom_collab %}
+    Nouveau collaborateur
+{% endblock %}
+
+{%  block body %}
+
+    {{form(form)}}
+
+    <a href="{{ path('index-collab') }}">Accueil</a>
+
+{% endblock %}

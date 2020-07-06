@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for client in clients %}
+
+        {{ client.id }}<br>
+        {{ client.nomClient}}<br>
+        {{ client.prenomClient}}<br>
+        {{ client.numClient}}<br>
+        {{ client.emailClient}}<br>
+
+        <a href="{{ path('edit-client', {id:client.id}) }}"> Modifier</a> /
+        <a href="{{ path('delete-client', {id:client.id}) }}"> Supprimer</a><br><br>
+    {% endfor %}
+
+    <a href="{{ path('new-client') }}">Ajouter un client</a>
+
+{% endblock %}

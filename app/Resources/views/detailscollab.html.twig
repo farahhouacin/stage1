@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for collab in collabs %}
+
+        {{ collab.id }}<br>
+        {{ collab.nomCollab}}<br>
+        {{ collab.prenomCollab}}<br>
+        {{ collab.numCollab}}<br>
+        {{ collab.emailCollab}}<br>
+
+        <a href="{{ path('edit-collab', {id:collab.id}) }}"> Modifier</a> /
+        <a href="{{ path('delete-collab', {id:collab.id}) }}"> Supprimer</a><br><br>
+
+    {% endfor %}
+
+    <a href="{{ path('new-collab') }}">Ajouter un collaborateur</a>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for collab in collabs %}
+        {{ collab.id }}<br>
+        {{ collab.nomCollab }}<br>
+        {{ collab.prenomCollab }}<br>
+        {{ collab.emailCollab }}<br>
+        {{ collab.numCollab }}<br>
+
+
+        <a href="{{ path('detailscollab-collab', {id:collab.id}) }}"> Détails</a><br><br>
+
+
+    {% endfor %}
+
+
+{% endblock %}

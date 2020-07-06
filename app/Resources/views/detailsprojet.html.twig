@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for projet in projets %}
+
+        {{ projet.id }}<br>
+        {{ projet.nomProjet}}<br>
+        {{ projet.description}}<br>
+        {{ projet.dateDebut|date('d/m/Y') }}<br>
+        {{ projet.dateFin|date('d/m/Y') }}<br>
+        {{ projet.dateButoir|date('d/m/Y') }}<br>
+        {{ projet.fonctionnaliteDev}}<br>
+        {{ projet.hebergement}}<br>
+        {{ projet.preprod}}<br>
+        {{ projet.url}}<br>
+
+        <a href="{{ path('edit-projet', {id:projet.id}) }}"> Modifier</a> /
+        <a href="{{ path('delete-projet', {id:projet.id}) }}"> Supprimer</a><br><br>
+
+    {% endfor %}
+
+    <a href="{{ path('new-projet') }}">Ajouter un projet</a>
+
+{% endblock %}
