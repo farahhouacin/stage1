@@ -87,7 +87,7 @@ class DefaultController extends Controller
         if ($request->isMethod('POST') && $roleForm->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
-            $em->persist($role;
+            $em->persist($role);
             $em->flush();
         }
         return $this->render('newcollab.html.twig', [
