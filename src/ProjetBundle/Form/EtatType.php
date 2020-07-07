@@ -15,27 +15,30 @@ class EtatType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+//        const MAQUETTE = 'maquette';
+//        const ENCOURS = 'encours';
+//        const FIN = 'fin';
+
         $builder
-//            ->add('nomEtat',ChoiceType::class,[
-//                'label'=> 'Etat'
-//                'choices' =>[
-//                    ''
-//    ]
-//            ])
-//            $builder->add('isAttending', ChoiceType::class, [
-//                'choices'  => [
-//                    'Maybe' => null,
-//                    'Yes' => true,
-//                    'No' => false,
-//                ],
-//            ])
-            ->add('dateDeb',DateType::class,[
-                'label'=>'Date de début du projet'
+            ->add('nameEtat', ChoiceType::class, [
+                'nameEtat' => [
+                    'En cours de validation (maquette)' => self::MAQUETTE,
+                    'En cours de réalisation' => self::ENCOURS,
+                    'Terminé' => self::FIN
+                ],
+                'label' => 'Etat',
+                'expanded' => 'true',
+                'multiple' => 'true'
             ])
-            ->add('dateFin',DateType::class,[
-                'label'=> 'Date de fin du projet'
+            ->add('dateDeb', DateType::class, [
+                'label' => 'Date de début du projet'
+            ])
+            ->add('dateFin', DateType::class, [
+                'label' => 'Date de fin du projet'
             ]);
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

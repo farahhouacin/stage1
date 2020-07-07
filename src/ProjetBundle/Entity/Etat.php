@@ -24,9 +24,9 @@ class Etat
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_etat", type="string", length=255)
+     * @ORM\Column(name="name_etat", type="choiceType")
      */
-    private $nomEtat;
+    protected $nameEtat;
 
     /**
      * @var \DateTime
@@ -54,27 +54,27 @@ class Etat
     }
 
     /**
-     * Set nomEtat
+     * Set nameEtat
      *
-     * @param string $nomEtat
+     * @param string $nameEtat
      *
      * @return Etat
      */
-    public function setNomEtat($nomEtat)
+    public function setNameEtat($nameEtat)
     {
-        $this->nomEtat = $nomEtat;
+        $this->nameEtat = $nameEtat;
 
         return $this;
     }
 
     /**
-     * Get nomEtat
+     * Get nameEtat
      *
      * @return string
      */
-    public function getNomEtat()
+    public function getNameEtat()
     {
-        return $this->nomEtat;
+        return $this->nameEtat;
     }
 
     /**
