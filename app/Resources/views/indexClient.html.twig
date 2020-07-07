@@ -1,7 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<div id="page-wrapper">
+    <div class="container-fluid">
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h4 class="page-title">Tableau de bord</h4> </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+            </ol>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
@@ -17,25 +27,20 @@
                         </tr>
                         </thead>
                         <tr>
-
                         {% for client in clients %}
                             <td>{{ client.nomClient }}</td>
                             <td>{{ client.prenomClient }}</td>
                             <td>{{ client.emailClient }}</tr>
+                        {% endfor %}
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
 
-
-
-
-        <a href="{{ path('detailsclient-client', {id:client.id}) }}"> Détails</a><br><br>
-
-
-    {% endfor %}
-
+        {# <a href="{{ path('detailsclient-client', {id:client.id}) }}"> Détails</a><br><br> #}
 
 {% endblock %}
