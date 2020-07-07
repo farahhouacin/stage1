@@ -16,9 +16,19 @@ class EtatType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomEtat',TextType::class,[
-                'label'=> 'Etat'
-            ])
+//            ->add('nomEtat',ChoiceType::class,[
+//                'label'=> 'Etat'
+//                'choices' =>[
+//                    ''
+//    ]
+//            ])
+//            $builder->add('isAttending', ChoiceType::class, [
+//                'choices'  => [
+//                    'Maybe' => null,
+//                    'Yes' => true,
+//                    'No' => false,
+//                ],
+//            ])
             ->add('dateDeb',DateType::class,[
                 'label'=>'Date de début du projet'
             ])

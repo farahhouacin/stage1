@@ -167,21 +167,9 @@ class DefaultController extends Controller
         ]);
     }
 
-    /**
-     * @return ContainerInterface
-     */
-    public function getContainer()
-    {
-        return $this->container;
-    }
 
-    /**
-     * @param ContainerInterface $container
-     */
-    public function setContainer($container)
-    {
-        $this->container = $container;
-    }
+
+
     /**
      * @Route("/editfonction/{id}", name="edit-fonction")
      * @param $id
