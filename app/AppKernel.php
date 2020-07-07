@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new CollaborateurBundle\CollaborateurBundle(),
             new ProjetBundle\ProjetBundle(),
             new ClientBundle\ClientBundle(),
+            new IndexBundle\IndexBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
