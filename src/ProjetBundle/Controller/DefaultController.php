@@ -2,6 +2,7 @@
 
 namespace ProjetBundle\Controller;
 
+use ProjetBundle\Form\EtatType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -86,5 +87,55 @@ class DefaultController extends Controller
         return $this->render('detailsprojet.html.twig', [
             'form' => $projetForm->createView()
         ]);
+    }
+    /**
+     * @Route ("/newetat", name="new-etat")
+     */
+    public function newEtat(Request $request)
+    {
+        $etat = new Etat();
+        $etatForm = $this->createForm(EtatType::class, $etat);
+
+        if ($request->isMethod('POST') && $etatForm->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($etat);
+            $em->flush();
+        }
+
+        return $this->render('newetat.html.twig', [
+            'form' => $etatForm->createView()
+
+        ]);
+    }
+    /**
+     * @Route("/editetat/{id}", name="edit-etat")
+     */
+    public function editEtat($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $etat = $em->getRepository('ProjetBundle:Etat')->find($id);
+        $etatForm = $this->createForm(EtatType::class, $etat);
+
+        if ($request->isMethod('POST') && $etatForm->handleRequest($request)->isValid()) {
+            $em->flush();
+            return $this->redirectToRoute('index-projet');
+        }
+
+        return $this->render('editetat.html.twig', [
+            'form' => $etatForm->createView()
+        ]);
+    }
+    /**
+     * @Route ("/deleteetat/{id}", name="delete-etat")
+     */
+    public function deleteEtat($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $etat = $em->getRepository('ProjetBundle:Etat')->find($id);
+        $em->remove($etat);
+        $em->flush();
+
+        return $this->redirectToRoute('index-projet');
     }
 }

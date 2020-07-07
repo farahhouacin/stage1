@@ -125,4 +125,3 @@ class Etat
         return $this->dateFin;
     }
 }
-
