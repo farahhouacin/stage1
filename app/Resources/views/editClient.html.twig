@@ -7,6 +7,11 @@
 {%  block body %}
 
     {{form(form)}}
+    {% for client in clients %}
+    <td>{{ client.nameClient }}</td>
+    <td>{{ client.firstnameClient }}</td>
+    <td>{{ client.telClient }}</td>
+    <td>{{ client.emailClient }}</td>
 
     <a href="{{ path('index-client') }}">Accueil</a>
 

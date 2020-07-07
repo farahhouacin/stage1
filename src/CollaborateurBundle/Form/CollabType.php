@@ -2,6 +2,7 @@
 
 namespace CollaborateurBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -29,7 +30,13 @@ class CollabType extends AbstractType
             ])
             ->add('passwordCollab', PasswordType::class,[
                 'label'=> 'Mot de passe'
+
             ])
+//            ->add('fonction', EntityType::class,[
+//                    'choice_label' => 'username',
+//                    'class'=>'CollaborateurBundle:Fonction'
+//                ]
+//                )
             ->add('save', SubmitType::class,  [
             'label' => 'Ajouter un collaborateur',
             'attr' => [

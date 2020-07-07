@@ -20,16 +20,16 @@ class EtatType extends AbstractType
 //        const FIN = 'fin';
 
         $builder
-            ->add('nameEtat', ChoiceType::class, [
-                'nameEtat' => [
-                    'En cours de validation (maquette)' => self::MAQUETTE,
-                    'En cours de réalisation' => self::ENCOURS,
-                    'Terminé' => self::FIN
-                ],
-                'label' => 'Etat',
-                'expanded' => 'true',
-                'multiple' => 'true'
-            ])
+//            ->add('nameEtat', ChoiceType::class, [
+//                'nameEtat' => [
+//                    'En cours de validation (maquette)' => self::MAQUETTE,
+//                    'En cours de réalisation' => self::ENCOURS,
+//                    'Terminé' => self::FIN
+//                ],
+//                'label' => 'Etat',
+//                'expanded' => 'true',
+//                'multiple' => 'true'
+//            ])
             ->add('dateDeb', DateType::class, [
                 'label' => 'Date de début du projet'
             ])

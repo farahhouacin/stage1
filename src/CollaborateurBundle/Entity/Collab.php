@@ -28,12 +28,6 @@ class Collab
      */
     private $passwordCollab;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email_collab", type="string", length=30)
-     */
-    private $emailCollab;
 
     /**
      * @var string
@@ -48,6 +42,20 @@ class Collab
      * @ORM\Column(name="firstname_collab", type="string", length=20)
      */
     private $firstnameCollab;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel_collab", type="string", length=14)
+     */
+    private $telCollab;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_collab", type="string", length=30)
+     */
+    private $emailCollab;
 
 
 
@@ -155,5 +163,28 @@ class Collab
     public function getFirstnameCollab()
     {
         return $this->firstnameCollab;
+    }
+    /**
+     * Set telCollab
+     *
+     * @param string $telCollab
+     *
+     * @return Collab
+     */
+    public function setTelCollab($telCollab)
+    {
+        $this->telCollab = $telCollab;
+
+        return $this;
+    }
+
+    /**
+     * Get telCollab
+     *
+     * @return string
+     */
+    public function getTelCollab()
+    {
+        return $this->telCollab;
     }
 }

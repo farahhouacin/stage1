@@ -24,7 +24,7 @@ class Etat
     /**
      * @var string
      *
-     * @ORM\Column(name="name_etat", type="choiceType")
+     * @ORM\Column(name="name_etat", type="string",length=30)
      */
     protected $nameEtat;
 

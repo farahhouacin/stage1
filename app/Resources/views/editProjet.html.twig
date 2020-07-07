@@ -7,6 +7,19 @@
 {%  block body %}
 
     {{form(form)}}
+    {% for projet in projets %}
+
+        {{ projet.id }}<br>
+        {{ projet.name_projet }}<br>
+        {{ projet.description }}<br>
+        {{ projet.dateDebut|date('d/m/Y') }}<br>
+        {{ projet.dateFin|date('d/m/Y') }}<br>
+        {{ projet.dateButoir|date('d/m/Y') }}<br>
+        {{ projet.fonctionnaliteDev }}<br>
+        {{ projet.hebergement }}<br>
+        {{ projet.preprod }}<br>
+        {{ projet.url }}<br>
+    {% endfor %}
 
     <a href="{{ path('index-client') }}">Accueil</a>
 

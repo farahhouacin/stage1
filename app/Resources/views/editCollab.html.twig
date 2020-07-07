@@ -7,6 +7,13 @@
 {%  block body %}
 
     {{form(form)}}
+    {% for collab in collabs %}
+        <td>{{ collab.name_collab }} </td>
+        <td>{{ client.firstnameCollab }}</td>
+        <td>{{ client.telCollab }}</td>
+        <td>{{ client.emailClient }}</td>
+        <td>{{ collab.fonctionCollab }}</td>
+    {% endfor %}
 
     <a href="{{ path('index-client') }}">Accueil</a>
 
