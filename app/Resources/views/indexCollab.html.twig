@@ -1,13 +1,36 @@
-{% extends 'index.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
 
-    {% for collab in collabs %}
-        {{ collab.id }}<br>
-        {{ collab.nomCollab }}<br>
-        {{ collab.prenomCollab }}<br>
-        {{ collab.emailCollab }}<br>
-        {{ collab.numCollab }}<br>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title">Ils travaillent avec nous</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <td>Nom du collaborateur</td>
+                            <td>Prénom du collaborateur</td>
+                            <td>Email du collaborateur</td>
+                            <td>Fonction du collaborateur</td>
+                        </tr>
+                        </thead>
+                        <tr>
+                            {% for collab in collabs %}
+                                <td>{{ collab.nomCollab }}</td>
+                                <td>{{ collab.prenomCollab }}</td>
+                                <td>{{ collab.emailCollab }}</tr>
+                                <td>{{ collab.fonctionCollab }}</tr>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
         <a href="{{ path('detailscollab-collab', {id:collab.id}) }}"> Détails</a><br><br>

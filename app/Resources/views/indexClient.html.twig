@@ -2,13 +2,34 @@
 
 {% block body %}
 
-    {% for client in clients %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title">Nos clients</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <td>Nom du client</td>
+                            <td>Prénom du client</td>
+                            <td>Email client</td>
+                        </tr>
+                        </thead>
+                        <tr>
 
-        {{ client.id }}<br>
-        {{ client.nomClient }}<br>
-        {{ client.prenomClient }}<br>
-        {{ client.numClient }}<br>
-        {{ client.emailClient }}<br>
+                        {% for client in clients %}
+                            <td>{{ client.nomClient }}</td>
+                            <td>{{ client.prenomClient }}</td>
+                            <td>{{ client.emailClient }}</tr>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
         <a href="{{ path('detailsclient-client', {id:client.id}) }}"> Détails</a><br><br>

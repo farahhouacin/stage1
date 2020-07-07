@@ -19,7 +19,7 @@ class DefaultController extends Controller
     public function indexClient()
     {
         $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
-        return $this->render('index.html.twig', [
+        return $this->render('indexClient.html.twig', [
             'clients' => $clients
         ]);
     }
