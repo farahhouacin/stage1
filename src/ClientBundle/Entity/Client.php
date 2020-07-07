@@ -24,14 +24,14 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="name_client", type="string", length=20)
+     * @ORM\Column(name="name_client", type="string", length=40)
      */
     private $nameClient;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname_client", type="string", length=20)
+     * @ORM\Column(name="firstname_client", type="string", length=40)
      */
     private $firstnameClient;
 
@@ -45,7 +45,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="email_client", type="string", length=30)
+     * @ORM\Column(name="email_client", type="string", length=40)
      */
     private $emailClient;
 

@@ -65,8 +65,10 @@ class DefaultController extends Controller
             return $this->redirectToRoute('index-collab');
         }
 
-        return $this->render('edit.html.twig', [
-            'form' => $collabForm->createView()
+        return $this->render('editCollab.html.twig', [
+            'form' => $collabForm->createView(),
+            'collab' => $collab
+
         ]);
     }
     /**
@@ -76,10 +78,13 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $collab = $em->getRepository('CollaborateurBundle:Collab')->find($id);
+
         $em->remove($collab);
         $em->flush();
 
         return $this->redirectToRoute('index-collab');
+
+
     }
     /**
      * @Route("/detailscollab/{id}", name="details-collab")

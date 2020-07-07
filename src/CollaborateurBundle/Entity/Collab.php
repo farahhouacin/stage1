@@ -24,7 +24,7 @@ class Collab
     /**
      * @var string
      *
-     * @ORM\Column(name="password_collab", type="string", length=25)
+     * @ORM\Column(name="password_collab", type="string", length=255)
      */
     private $passwordCollab;
 
@@ -32,14 +32,14 @@ class Collab
     /**
      * @var string
      *
-     * @ORM\Column(name="name_collab", type="string", length=20)
+     * @ORM\Column(name="name_collab", type="string", length=40)
      */
     private $nameCollab;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname_collab", type="string", length=20)
+     * @ORM\Column(name="firstname_collab", type="string", length=40)
      */
     private $firstnameCollab;
 
@@ -53,7 +53,7 @@ class Collab
     /**
      * @var string
      *
-     * @ORM\Column(name="email_collab", type="string", length=30)
+     * @ORM\Column(name="email_collab", type="string", length=40)
      */
     private $emailCollab;
 

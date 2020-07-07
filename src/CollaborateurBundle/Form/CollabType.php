@@ -28,6 +28,9 @@ class CollabType extends AbstractType
             ->add('emailCollab', EmailType::class, [
                 'label' => 'Email'
             ])
+            ->add('telCollab', TextType::class, [
+                'label' => 'Numéro de téléphone'
+            ])
             ->add('passwordCollab', PasswordType::class,[
                 'label'=> 'Mot de passe'
 

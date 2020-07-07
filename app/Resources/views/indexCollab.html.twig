@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div id="page-wrapper">
+    <div id="page-wrapper">
     <div class="container-fluid">
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -21,21 +21,26 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>#</th>
                             <td>Nom du collaborateur</td>
                             <td>Prénom du collaborateur</td>
                             <td>Email du collaborateur</td>
-                            {#<td>Fonction du collaborateur</td>#}
+                            <td>Action</td>
                         </tr>
                         </thead>
-                        <tr>
-                            {% for collab in collabs %}
+
+                        {% for collab in collabs %}
+                            <tr>
                                 <td>{{ collab.nameCollab }}</td>
                                 <td>{{ collab.firstnameCollab }}</td>
-                                <td>{{ collab.emailCollab }}</tr>
+                                <td>{{ collab.emailCollab }}</td>
+                                <td>
+                                    <a href={{ path('edit-collab', {id:collab.id}) }}>Modifier</a>
+                                    <a href={{ path('delete-collab', {id:collab.id}) }}>Supprimer</a>
+                                </td>
                                 {#<td>{{ collab.fonctionCollab }}</tr>#}
-                            {% endfor %}
-                        </tr>
+                            </tr>
+                        {% endfor %}
+
                     </table>
                 </div>
             </div>
@@ -44,7 +49,7 @@
 
 
 
-        {#<a href="{{ path('detailscollab-collab', {id:collab.id}) }}"> Détails</a><br><br>#}
+    {#<a href="{{ path('detailscollab-collab', {id:collab.id}) }}"> Détails</a><br><br>#}
 
 
 
