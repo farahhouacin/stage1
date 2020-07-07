@@ -3,9 +3,12 @@
 namespace CollaborateurBundle\Controller;
 
 use CollaborateurBundle\Entity\Collab;
+use CollaborateurBundle\Entity\Fonction;
 use CollaborateurBundle\Entity\Role;
 use CollaborateurBundle\Form\CollabType;
+use CollaborateurBundle\Form\FonctionType;
 use CollaborateurBundle\Form\RoleType;
+use Psr\Container\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -78,6 +81,19 @@ class DefaultController extends Controller
 
         return $this->redirectToRoute('index-collab');
     }
+    /**
+     * @Route("/detailscollab/{id}", name="details-collab")
+     */
+    public function detailsCollab($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $collab = $em->getRepository('CollaborateurBundle:Collab')->find($id);
+        $collabForm = $this->createForm(CollabType::class, $collab);
+
+        return $this->render('detailscollab.html.twig', [
+            'form' => $collabForm->createView()
+        ]);
+    }
 
     /**
      * @Route ("/newrole", name="new-role")
@@ -93,7 +109,7 @@ class DefaultController extends Controller
             $em->persist($role);
             $em->flush();
         }
-        return $this->render('newcollab.html.twig', [
+        return $this->render('newrole.html.twig', [
             'form' => $roleForm->createView()
         ]);
     }
@@ -106,20 +122,20 @@ class DefaultController extends Controller
     public function editRole($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $role = $em->getRepository('CollaborateurBundle:Collab')->find($id);
-        $roleForm = $this->createForm(CollabType::class, $role);
+        $role = $em->getRepository('CollaborateurBundle:Role')->find($id);
+        $roleForm = $this->createForm(RoleType::class, $role);
 
         if ($request->isMethod('POST') && $roleForm->handleRequest($request)->isValid()) {
             $em->flush();
             return $this->redirectToRoute('index-collab');
         }
 
-        return $this->render('edit.html.twig', [
+        return $this->render('editrole.html.twig', [
             'form' => $roleForm->createView()
         ]);
     }
     /**
-     * @Route ("/delete/{id}", name="delete-collab")
+     * @Route ("/deleterole/{id}", name="delete-role")
      */
     public function deleteRole($id)
     {
@@ -131,18 +147,73 @@ class DefaultController extends Controller
         return $this->redirectToRoute('index-collab');
     }
 
+
     /**
-     * @Route("/detailscollab/{id}", name="details-collab")
+     * @Route ("/newfonction", name="new-fonction")
      */
-    public function detailsCollab($id, Request $request)
+    public function newFonction(Request $request)
+    {
+        $fonction = new Fonction();
+        $fonctionForm = $this->createForm(FonctionType::class, $fonction);
+
+        if ($request->isMethod('POST') && $fonctionForm->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($fonction);
+            $em->flush();
+        }
+        return $this->render('newfonction.html.twig', [
+            'form' => $fonctionForm->createView()
+        ]);
+    }
+
+    /**
+     * @return ContainerInterface
+     */
+    public function getContainer()
+    {
+        return $this->container;
+    }
+
+    /**
+     * @param ContainerInterface $container
+     */
+    public function setContainer($container)
+    {
+        $this->container = $container;
+    }
+    /**
+     * @Route("/editfonction/{id}", name="edit-fonction")
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function editFonction($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $collab = $em->getRepository('CollaborateurBundle:Collab')->find($id);
-        $collabForm = $this->createForm(CollabType::class, $collab);
+        $fonction = $em->getRepository('CollaborateurBundle:Fonction')->find($id);
+        $fonctionForm = $this->createForm(FonctionType::class, $fonction);
 
-        return $this->render('detailscollab.html.twig', [
-            'form' => $collabForm->createView()
+        if ($request->isMethod('POST') && $fonctionForm->handleRequest($request)->isValid()) {
+            $em->flush();
+            return $this->redirectToRoute('index-collab');
+        }
+
+        return $this->render('editfonction.html.twig', [
+            'form' => $fonctionForm->createView()
         ]);
+    }
+    /**
+     * @Route ("/deletefonction/{id}", name="delete-fonction")
+     */
+    public function deleteFonction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $fonction = $em->getRepository('CollaborateurBundle:Fonction')->find($id);
+        $em->remove($fonction);
+        $em->flush();
+
+        return $this->redirectToRoute('index-collab');
     }
 
 }

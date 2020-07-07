@@ -8,8 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-
-class RoleType extends AbstractType
+class FonctionType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -17,25 +16,22 @@ class RoleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomRole', TextType::class, [
-                'label' => 'Rôle'
-            ] )
-            ->add('save', SubmitType::class, [
-                    'label' => 'Ajouter un rôle',
-                    'attr' => [
-                        'class' => 'btn'
-                    ]
+            ->add('nomFonction', TextType::class, [
+                'label' => 'Fonction'
+            ])
+            ->add('save', SubmitType::class,  [
+                'label' => 'Ajouter une fonction',
+                'attr' => [
+                    'class' => 'btn'
                 ]
-            );
-    }
-
-    /**
+            ]);
+    }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'CollaborateurBundle\Entity\Role'
+            'data_class' => 'CollaborateurBundle\Entity\Fonction'
         ));
     }
 
@@ -44,6 +40,8 @@ class RoleType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'collaborateurbundle_role';
+        return 'collaborateurbundle_fonction';
     }
+
+
 }
