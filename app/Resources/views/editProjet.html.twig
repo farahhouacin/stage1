@@ -1,1 +1,13 @@
-{{form(form)}}
+{% extends 'base.html.twig' %}
+
+{% block nom_client %}
+    Modification Projet
+{% endblock %}
+
+{%  block body %}
+
+    {{form(form)}}
+
+    <a href="{{ path('index-client') }}">Accueil</a>
+
+{% endblock %}
