@@ -25,7 +25,7 @@
                             <td>Nom du collaborateur</td>
                             <td>Prénom du collaborateur</td>
                             <td>Email du collaborateur</td>
-                            <td>Fonction du collaborateur</td>
+                            {#<td>Fonction du collaborateur</td>#}
                         </tr>
                         </thead>
                         <tr>
@@ -33,7 +33,7 @@
                                 <td>{{ collab.nameCollab }}</td>
                                 <td>{{ collab.firstnameCollab }}</td>
                                 <td>{{ collab.emailCollab }}</tr>
-                                <td>{{ collab.fonctionCollab }}</tr>
+                                {#<td>{{ collab.fonctionCollab }}</tr>#}
                             {% endfor %}
                         </tr>
                     </table>
