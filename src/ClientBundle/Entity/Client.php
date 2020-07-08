@@ -13,6 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Client
 {
     /**
+     * @ORM\OneToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="client")
+     */
+    private $projets;
+
+    public function __construct()
+    {
+        $this->projets = new ArrayCollection();
+    }
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")

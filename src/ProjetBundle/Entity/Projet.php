@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Projet
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projets")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     */
+    private $client;
+
     /**
      * @var int
      *
