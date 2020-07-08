@@ -14,17 +14,17 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Projet
 {
-
-    /**
-     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projet")
-     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
-     */
-    private $clients;
-
-    /**
-     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="projets")
-     */
-    private $collabs;
+//
+//    /**
+//     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projet")
+//     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+//     */
+//    private $clients;
+//
+//    /**
+//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="projets")
+//     */
+//    private $collabs;
 
     /**
      * @var int
@@ -340,106 +340,13 @@ class Projet
         return $this;
     }
 
-    /**
-     * Get client
-     *
-     * @return \ClientBundle\Entity\Client
-     */
-    public function getClient()
-    {
-        return $this->client;
-    }
-
-    /**
-     * Add client
-     *
-     * @param \CollaborateurBundle\Entity\Collab $client
-     *
-     * @return Projet
-     */
-    public function addClient(\CollaborateurBundle\Entity\Collab $client)
-    {
-        $this->client[] = $client;
-
-        return $this;
-    }
-
-    /**
-     * Remove client
-     *
-     * @param \CollaborateurBundle\Entity\Collab $client
-     */
-    public function removeClient(\CollaborateurBundle\Entity\Collab $client)
-    {
-        $this->client->removeElement($client);
-    }
-
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->clients = new ArrayCollection();
-
-        $this->collabs = new ArrayCollection();
-    }
-
-    /**
-     * Set clients
-     *
-     * @param \ClientBundle\Entity\Client $clients
-     *
-     * @return Projet
-     */
-    public function setClients(\ClientBundle\Entity\Client $clients = null)
-    {
-        $this->clients = $clients;
-
-        return $this;
-    }
-
-    /**
-     * Get clients
-     *
-     * @return \ClientBundle\Entity\Client
-     */
-    public function getClients()
-    {
-        return $this->clients;
-    }
-
-    /**
-     * Add collab
-     *
-     * @param \CollaborateurBundle\Entity\Collab $collab
-     *
-     * @return Projet
-     */
-    public function addCollab(\CollaborateurBundle\Entity\Collab $collab)
-    {
-        $this->collabs[] = $collab;
-
-        return $this;
-    }
-
-    /**
-     * Remove collab
-     *
-     * @param \CollaborateurBundle\Entity\Collab $collab
-     */
-    public function removeCollab(\CollaborateurBundle\Entity\Collab $collab)
-    {
-        $this->collabs->removeElement($collab);
-    }
-
-    /**
-     * Get collabs
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCollabs()
-    {
-        return $this->collabs;
-    }
+//    /**
+//    //     * Constructor
+//    //     */
+//    public function __construct()
+//    {
+//        $this->clients = new ArrayCollection();
+//
+//        $this->collabs = new ArrayCollection();
+//    }
 }

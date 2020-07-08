@@ -34,14 +34,14 @@ class CollabType extends AbstractType
             ->add('passwordCollab', PasswordType::class,[
                 'label'=> 'Mot de passe'
             ])
-            ->add('roles', EntityType::class, [
-                'class' => 'CollaborateurBundle:Role',
-                'choice_label' => 'nom_role',
-            ])
-            ->add('fonctions', EntityType::class, [
-                'class' => 'CollaborateurBundle:Fonction',
-                'choice_label' => 'nom_fonction',
-            ])
+//            ->add('roles', EntityType::class, [
+//                'class' => 'CollaborateurBundle:Role',
+//                'choice_label' => 'nom_role',
+//            ])
+//            ->add('fonctions', EntityType::class, [
+//                'class' => 'CollaborateurBundle:Fonction',
+//                'choice_label' => 'nom_fonction',
+//            ])
             ->add('save', SubmitType::class,  [
             'label' => 'Enregistrer',
             'attr' => [

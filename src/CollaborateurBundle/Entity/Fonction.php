@@ -14,10 +14,16 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Fonction
 {
-    /**
-     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="roles")
-     */
-    private $collabs;
+//    /**
+//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="roles")
+//     */
+//    private $collabs;
+//
+//    /**
+//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Fonction", mappedBy="")
+//     */
+//    private $fonctions
+
     /**
      * @var int
      *
@@ -26,11 +32,6 @@ class Fonction
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Fonction", mappedBy="fonction")
-     */
-
 
     /**
      * @var string
@@ -75,43 +76,11 @@ class Fonction
     }
 
 
-    /**
-     * Add collab
-     *
-     * @param \CollaborateurBundle\Entity\Collab $collab
-     *
-     * @return Fonction
-     */
-    public function addCollab(\CollaborateurBundle\Entity\Collab $collab)
-    {
-        $this->collabs[] = $collab;
 
-        return $this;
-    }
 
-    /**
-     * Remove collab
-     *
-     * @param \CollaborateurBundle\Entity\Collab $collab
-     */
-    public function removeCollab(\CollaborateurBundle\Entity\Collab $collab)
-    {
-        $this->collabs->removeElement($collab);
-    }
-
-    /**
-     * Get collabs
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCollabs()
-    {
-        return $this->collabs;
-    }
-
-    public function __construct()
-    {
-        $this->collabs = new ArrayCollection();
-
-    }
+//    public function __construct()
+//    {
+//        $this->collabs = new ArrayCollection();
+//
+//    }
 }

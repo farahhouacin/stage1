@@ -15,15 +15,15 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Client
 {
-    /**
-     * @ORM\OneToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="client")
-     */
-    private $projets;
-    /**
-     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="clients")
-     * @JoinTable(name="clients_roles")
-     */
-    private $roles;
+//    /**
+//     * @ORM\OneToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="client")
+//     */
+//    private $projets;
+//    /**
+//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="clients")
+//     * @JoinTable(name="clients_roles")
+//     */
+//    private $roles;
 
 
 
@@ -172,78 +172,12 @@ class Client
         return $this->emailClient;
     }
 
-    /**
-     * Add projet
-     *
-     * @param \ProjetBundle\Entity\Projet $projet
-     *
-     * @return Client
-     */
-    public function addProjet(\ProjetBundle\Entity\Projet $projet)
-    {
-        $this->projets[] = $projet;
 
-        return $this;
-    }
-
-    /**
-     * Remove projet
-     *
-     * @param \ProjetBundle\Entity\Projet $projet
-     */
-    public function removeProjet(\ProjetBundle\Entity\Projet $projet)
-    {
-        $this->projets->removeElement($projet);
-    }
-
-    /**
-     * Get projets
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProjets()
-    {
-        return $this->projets;
-    }
-
-    /**
-     * Add role
-     *
-     * @param \ProjetBundle\Entity\Role $role
-     *
-     * @return Client
-     */
-    public function addRole(\ProjetBundle\Entity\Role $role)
-    {
-        $this->roles[] = $role;
-
-        return $this;
-    }
-
-    /**
-     * Remove role
-     *
-     * @param \ProjetBundle\Entity\Role $role
-     */
-    public function removeRole(\ProjetBundle\Entity\Role $role)
-    {
-        $this->roles->removeElement($role);
-    }
-
-    /**
-     * Get roles
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getRoles()
-    {
-        return $this->roles;
-    }
-
-    public function __construct()
-    {
-        $this->projets = new ArrayCollection();
-
-        $this->roles = new ArrayCollection();
-    }
+//
+//    public function __construct()
+//    {
+//        $this->projets = new ArrayCollection();
+//
+//        $this->roles = new ArrayCollection();
+//    }
 }

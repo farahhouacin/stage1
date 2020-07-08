@@ -37,6 +37,7 @@ class DefaultController extends Controller
 
             $em->persist($projet);
             $em->flush();
+            return $this->redirectToRoute('index-projet');
         }
 
         return $this->render('newprojet.html.twig', [
@@ -58,7 +59,7 @@ class DefaultController extends Controller
             return $this->redirectToRoute('index-projet');
         }
 
-        return $this->render('edit.html.twig', [
+        return $this->render('editProjet.html.twig', [
             'form' => $projetForm->createView()
         ]);
     }
