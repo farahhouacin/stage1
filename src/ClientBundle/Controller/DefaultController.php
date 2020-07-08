@@ -34,10 +34,11 @@ class DefaultController extends Controller
 
         if ($request->isMethod('POST') && $clientForm->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($client);
             $em->flush();
+            return $this->redirectToRoute('index-client');
         }
+
         return $this->render('newclient.html.twig', [
             'form' => $clientForm->createView()
         ]);

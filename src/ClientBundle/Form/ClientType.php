@@ -23,11 +23,11 @@ class ClientType extends AbstractType
             ->add('firstnameClient', TextType::class, [
                 'label' => 'Prénom du Client'])
             ->add('telClient', NumberType::class,[
-                'label' => 'Nom du Client'] )
+                'label' => 'Tel du Client'] )
             ->add('emailClient', EmailType::class, [
             'label' => 'Email du Client'])
-            ->add('save', SubmitType::class, [
-                'label' => 'Enregistrer',
+            ->add('save', SubmitType::class,  [
+                'label' => 'Ajouter',
                 'attr' => [
                     'class' => 'btn'
                 ]

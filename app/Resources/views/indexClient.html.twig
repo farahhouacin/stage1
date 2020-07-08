@@ -24,16 +24,17 @@
                             <th>#</th>
                             <td>Nom du client</td>
                             <td>Prénom du client</td>
-                            <td>Email client</td>
                             <td>Téléphone client</td>
+                            <td>Email client</td>
                         </tr>
                         </thead>
                         <tr>
                         {% for client in clients %}
                             <td>{{ client.nameClient }}</td>
                             <td>{{ client.firstnameClient }}</td>
-                            <td>{{ client.emailClient }}</tr>
                             <td>{{ client.telClient }}</tr>
+                            <td>{{ client.emailClient }}</tr>
+
                         {% endfor %}
                         </tr>
                     </table>
