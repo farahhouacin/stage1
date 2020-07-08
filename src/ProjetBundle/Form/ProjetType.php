@@ -30,7 +30,7 @@ class ProjetType extends AbstractType
             ->add('preprod', TextType::class)
             ->add('url', UrlType::class)
             ->add('save', SubmitType::class, [
-                'label' => 'Ajouter un projet',
+                'label' => 'Enregistrer',
                 'attr' => [
                     'class' => 'btn'
                 ]

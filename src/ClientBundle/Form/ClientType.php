@@ -27,7 +27,7 @@ class ClientType extends AbstractType
             ->add('emailClient', EmailType::class, [
             'label' => 'Email du Client'])
             ->add('save', SubmitType::class, [
-                'label' => 'Ajouter un client',
+                'label' => 'Enregistrer',
                 'attr' => [
                     'class' => 'btn'
                 ]
