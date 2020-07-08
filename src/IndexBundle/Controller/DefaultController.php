@@ -13,6 +13,10 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('index.html.twig');
+        $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
+        return $this->render('index.html.twig', [
+            "clients"=>$clients
+        ]);
+
     }
 }

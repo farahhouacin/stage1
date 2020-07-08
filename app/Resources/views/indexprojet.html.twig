@@ -34,7 +34,10 @@
                             <td>{{ projet.nameProjet }}</td>
                             <td>{{ projet.date_debut|date('d/m/Y') }}</td>
                             <td>{{ projet.date_butoir|date('d/m/Y') }}</tr>
-
+                            <td>
+                                <a href={{ path('edit-projet', {id:projet.id}) }}>Modifier</a>
+                                <a href={{ path('delete-projet', {id:projet.id}) }}>Supprimer</a>
+                            </td>
 
                             </tr>
                     </table>

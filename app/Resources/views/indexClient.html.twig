@@ -28,13 +28,17 @@
                             <td>Email client</td>
                         </tr>
                         </thead>
-                        <tr>
+                        <td>
                         {% for client in clients %}
                             <td>{{ client.nameClient }}</td>
                             <td>{{ client.firstnameClient }}</td>
-                            <td>{{ client.telClient }}</tr>
-                            <td>{{ client.emailClient }}</tr>
-
+                            <td>{{ client.telClient }}</td>
+                            <td>{{ client.emailClient }}</td>
+                            <td>
+                                <a href={{ path('edit-client', {id:client.id}) }}>Modifier</a>
+                                <a href={{ path('delete-client', {id:client.id}) }}>Supprimer</a>
+                                {#<a href="{{ path('details-client', {id:client.id}) }}"> Détails</a>#}
+                            </td>
                         {% endfor %}
                         </tr>
                     </table>
@@ -45,7 +49,7 @@
     </div>
     </div>
 
-        {# <a href="{{ path('detailsclient-client', {id:client.id}) }}"> Détails</a><br><br> #}
+        {#  #}
 
 
 

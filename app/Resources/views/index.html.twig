@@ -161,31 +161,24 @@
                     <div class="white-box">
                         <h3 class="box-title">On s'approche de la fin</h3>
                         <div class="table-responsive">
-                            <?php//Connection avec la BDD.
-                                  $reponce = mysql_query("SELECT * FORM projet WHERE date_butoir - date < 30");
-                                ?>
                             <table class="table">
-                                <thead>
                                 <tr>
                                     <th>#</th>
-                                    <td>Nom du projet</td>
                                     <td>Nom du client</td>
-                                    <td>Date butoire</td>
+                                    <td>Prénom du client</td>
+                                    <td>Téléphone client</td>
+                                    <td>Email client</td>
                                 </tr>
                                 </thead>
-                                <?php //On affiche les lignes du tableau une à une à l'aide d'une boucle
-                                    for($donnees = mysql_fetch_array($reponse))
-                                    {
-                                    ?>
-                                <tr>
-                                    <td><?php echo $donnees['nom_projet'];?></td>
-                                    <td><?php echo $donnees['nom_client'];?></td>
-                                    <td><?php echo $donnees['date_butoir'];?></td>
+                                <td>
+                                    {% for client in clients %}
+                                <td>{{ client.nameClient }}</td>
+                                <td>{{ client.firstnameClient }}</td>
+                                <td>{{ client.telClient }}</td>
+                                <td>{{ client.emailClient }}</td>
+                                {% endfor %}
                                 </tr>
-                                <?php
-                                    } //fin de la boucle, le tableau contient toute la BDD
-                                    mysql_close(); //deconnection de mysql
-                                    ?>
+
                             </table>
                         </div>
                     </div>
@@ -199,31 +192,25 @@
                     <div class="white-box">
                         <h3 class="box-title">Projets Dernièrement Modifiés</h3>
                         <div class="table-responsive">
-                            <?php//Connection avec la BDD.
-                                  $reponce = mysql_query("SELECT * FORM projet");
-                                ?>
+
                             <table class="table">
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <td>Nom du projet</td>
                                     <td>Nom du client</td>
-                                    <td>Date de modification </td>
+                                    <td>Prénom du client</td>
+                                    <td>Téléphone client</td>
+                                    <td>Email client</td>
                                 </tr>
                                 </thead>
-                                <?php //On affiche les lignes du tableau une à une à l'aide d'une boucle
-                                    for($donnees = mysql_fetch_array($reponse))
-                                    {
-                                    ?>
-                                <tr>
-                                    <td><?php echo $donnees['nom_projet'];?></td>
-                                    <td><?php echo $donnees['nom_client'];?></td>
-                                    <td><?php echo $donnees['date_modify'];?></td>
+                                <td>
+                                    {% for client in clients %}
+                                        <td>{{ client.nameClient }}</td>
+                                        <td>{{ client.firstnameClient }}</td>
+                                        <td>{{ client.telClient }}</td>
+                                        <td>{{ client.emailClient }}</td>
+                                    {% endfor %}
                                 </tr>
-                                <?php
-                                    } //fin de la boucle, le tableau contient toute la BDD
-                                    mysql_close(); //deconnection de mysql
-                                    ?>
                             </table>
                         </div>
                     </div>
