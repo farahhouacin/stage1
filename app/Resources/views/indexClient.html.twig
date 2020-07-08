@@ -21,7 +21,6 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>#</th>
                             <td>Nom du client</td>
                             <td>Prénom du client</td>
                             <td>Téléphone client</td>
@@ -29,8 +28,9 @@
                             <td>Action</td>
                         </tr>
                         </thead>
-                        <td>
+
                         {% for client in clients %}
+                            <tr>
                             <td>{{ client.nameClient }}</td>
                             <td>{{ client.firstnameClient }}</td>
                             <td>{{ client.telClient }}</td>
@@ -40,8 +40,9 @@
                                 <a href={{ path('delete-client', {id:client.id}) }}>Supprimer</a>
                                 {#<a href="{{ path('details-client', {id:client.id}) }}"> Détails</a>#}
                             </td>
+                            <tr>
                         {% endfor %}
-                        </tr>
+
                     </table>
                 </div>
             </div>
