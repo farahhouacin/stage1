@@ -165,20 +165,19 @@
                                 <tr>
                                     <th>#</th>
                                     <td>Nom du client</td>
-                                    <td>Prénom du client</td>
-                                    <td>Téléphone client</td>
-                                    <td>Email client</td>
+                                    <td>Nom du projet</td>
+                                    <td>Date butoir</td>
                                 </tr>
                                 </thead>
                                 <td>
                                     {% for client in clients %}
-                                <td>{{ client.nameClient }}</td>
-                                <td>{{ client.firstnameClient }}</td>
-                                <td>{{ client.telClient }}</td>
-                                <td>{{ client.emailClient }}</td>
-                                {% endfor %}
+                                        <td>{{ client.nameClient }}</td>
+                                        <td>{{ client.firstnameClient }}</td>
+                                    {% endfor %}
+                                    {% for projet in projets %}
+                                        <td>{{ projet.date_butoir|date('d/m/Y') }}</td>
+                                    {% endfor %}
                                 </tr>
-
                             </table>
                         </div>
                     </div>
@@ -197,18 +196,18 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <td>Nom du client</td>
-                                    <td>Prénom du client</td>
-                                    <td>Téléphone client</td>
-                                    <td>Email client</td>
+
+                                    <td>Nom du projet</td>
+                                    <td>Date de modification</td>
+                                    <td>Date butoir</td>
                                 </tr>
                                 </thead>
                                 <td>
-                                    {% for client in clients %}
-                                        <td>{{ client.nameClient }}</td>
-                                        <td>{{ client.firstnameClient }}</td>
-                                        <td>{{ client.telClient }}</td>
-                                        <td>{{ client.emailClient }}</td>
+                                    {% for projet in projets %}
+
+                                        <td>{{ projet.nameProjet }}</td>
+                                        <td>{{ projet.date_modif|date('d/m/Y') }}</td>
+                                        <td>{{ projet.date_butoir|date('d/m/Y') }}</td>
                                     {% endfor %}
                                 </tr>
                             </table>

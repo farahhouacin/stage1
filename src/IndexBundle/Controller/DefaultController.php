@@ -14,8 +14,10 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
+        $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
         return $this->render('index.html.twig', [
-            "clients"=>$clients
+            'projets' => $projets,
+            "clients"=> $clients
         ]);
 
     }
