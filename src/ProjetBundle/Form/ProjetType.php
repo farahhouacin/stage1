@@ -2,6 +2,7 @@
 
 namespace ProjetBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -29,6 +30,14 @@ class ProjetType extends AbstractType
             ->add('hebergement', TextType::class)
             ->add('preprod', TextType::class)
             ->add('url', UrlType::class)
+            ->add('clients', EntityType::class, [
+                'class' => 'ClientBundle:Client',
+                'choice_label' => 'name_client', 'firstname_client'
+            ])
+            ->add('collabs', EntityType::class, [
+                'class' => 'CollaborateurBundle:Collab',
+                'choice_label' => 'name_collab', 'firstname_collab'
+            ])
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer',
                 'attr' => [

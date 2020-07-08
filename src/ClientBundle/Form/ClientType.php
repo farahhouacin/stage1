@@ -30,7 +30,6 @@ class ClientType extends AbstractType
             ->add('roles', EntityType::class, [
                 'class' => 'CollaborateurBundle:Role',
                 'choice_label' => 'nom_role',
-
             ])
             ->add('save', SubmitType::class,  [
                 'label' => 'Ajouter',
