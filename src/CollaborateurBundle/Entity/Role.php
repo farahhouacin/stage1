@@ -2,7 +2,9 @@
 
 namespace CollaborateurBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Role
@@ -20,6 +22,11 @@ class Role
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ManyToMany(targetEntity="ClientBundle\Entity\Client", mappedBy="roles")
+     */
+    private $clients;
 
     /**
      * @var string
@@ -61,5 +68,44 @@ class Role
     public function getNomRole()
     {
         return $this->nomRole;
+    }
+
+    public function __construct() {
+        $this->clients = new ArrayCollection();
+    }
+
+
+    /**
+     * Add client
+     *
+     * @param \ClientBundle\Entity\Client $client
+     *
+     * @return Role
+     */
+    public function addClient(\ClientBundle\Entity\Client $client)
+    {
+        $this->clients[] = $client;
+
+        return $this;
+    }
+
+    /**
+     * Remove client
+     *
+     * @param \ClientBundle\Entity\Client $client
+     */
+    public function removeClient(\ClientBundle\Entity\Client $client)
+    {
+        $this->clients->removeElement($client);
+    }
+
+    /**
+     * Get clients
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClients()
+    {
+        return $this->clients;
     }
 }

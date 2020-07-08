@@ -2,7 +2,10 @@
 
 namespace ClientBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Client
@@ -16,11 +19,16 @@ class Client
      * @ORM\OneToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="client")
      */
     private $projets;
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="clients")
+     * @JoinTable(name="users_roles")
+     */
+    private $roles;
 
-    public function __construct()
-    {
-        $this->projets = new ArrayCollection();
-    }
+
+
+
+
 
     /**
      * @var int
@@ -199,5 +207,48 @@ class Client
     public function getProjets()
     {
         return $this->projets;
+    }
+
+
+    public function __construct()
+    {
+        $this->projets = new ArrayCollection();
+
+        $this->roles = new ArrayCollection();
+    }
+
+
+    /**
+     * Add role
+     *
+     * @param \ProjetBundle\Entity\Role $role
+     *
+     * @return Client
+     */
+    public function addRole(\ProjetBundle\Entity\Role $role)
+    {
+        $this->roles[] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Remove role
+     *
+     * @param \ProjetBundle\Entity\Role $role
+     */
+    public function removeRole(\ProjetBundle\Entity\Role $role)
+    {
+        $this->roles->removeElement($role);
+    }
+
+    /**
+     * Get roles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }
