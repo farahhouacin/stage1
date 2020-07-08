@@ -3,6 +3,7 @@
 namespace ProjetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Projet
@@ -17,6 +18,11 @@ class Projet
      * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projets")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      */
+
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="projets")
+     */
+
     private $client;
 
     /**
@@ -317,5 +323,29 @@ class Projet
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \ClientBundle\Entity\Client $client
+     *
+     * @return Projet
+     */
+    public function setClient(\ClientBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \ClientBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }

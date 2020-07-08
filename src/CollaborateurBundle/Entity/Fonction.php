@@ -22,6 +22,11 @@ class Fonction
     private $id;
 
     /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Fonction", mappedBy="fonction")
+     */
+
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom_fonction", type="string", length=255)
