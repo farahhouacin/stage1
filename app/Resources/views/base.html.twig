@@ -63,28 +63,28 @@
     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
         <ul class="nav" id="side-menu">
             <li style="padding: 10px 0 0;">
-                <a href="{{ asset('index') }}" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                <a href="{{ path('index') }}" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                                                                  aria-hidden="true"></i><span
                             class="hide-menu">Accueil</span></a>
             </li>
             <li>
-                <a href="{{ asset('detailscollab') }}" class="waves-effect"><i class="fa fa-user fa-fw"
+                {#<a href="{{ path('details-collab') }}" class="waves-effect"><i class="fa fa-user fa-fw"
                                                                                          aria-hidden="true"></i><span
-                            class="hide-menu">Profil</span></a>
+                            class="hide-menu">Profil</span></a>#}
             </li>
             <li>
-                <a href="{{ asset('projet') }}" class="waves-effect"><i class="fa fa-table fa-fw"
+                <a href="{{ path('index-projet') }}" class="waves-effect"><i class="fa fa-table fa-fw"
                                                                                        aria-hidden="true"></i><span
                             class="hide-menu">Projets</span></a>
             </li>
             <li>
-                <a href="{{ asset('client') }}" class="waves-effect"><i class="fa fa-font fa-fw"
+                <a href="{{ path('index-client') }}" class="waves-effect"><i class="fa fa-font fa-fw"
                                                                                        aria-hidden="true"></i><span
                             class="hide-menu">Clients</span></a>
             </li>
 
             <li>
-                <a href="{{ asset('collab') }}" class="waves-effect"><i class="fa fa-info-circle fa-fw"
+                <a href="{{ path('index-collab') }}" class="waves-effect"><i class="fa fa-info-circle fa-fw"
                                                                                        aria-hidden="true"></i><span
                             class="hide-menu">Collaborateurs</span></a>
             </li>
