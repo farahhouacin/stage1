@@ -166,38 +166,4 @@ class Client
     {
         return $this->emailClient;
     }
-
-    /**
-     * Add projet
-     *
-     * @param \ProjetBundle\Entity\Projet $projet
-     *
-     * @return Client
-     */
-    public function addProjet(\ProjetBundle\Entity\Projet $projet)
-    {
-        $this->projets[] = $projet;
-
-        return $this;
-    }
-
-    /**
-     * Remove projet
-     *
-     * @param \ProjetBundle\Entity\Projet $projet
-     */
-    public function removeProjet(\ProjetBundle\Entity\Projet $projet)
-    {
-        $this->projets->removeElement($projet);
-    }
-
-    /**
-     * Get projets
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProjets()
-    {
-        return $this->projets;
-    }
 }
