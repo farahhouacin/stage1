@@ -26,15 +26,15 @@
                             <td>Nom du projet</td>
                             <td>Date de début</td>
                             <td>Date butoire</td>
-                            <td>Description du projet</td>
+
                         </tr>
                         </thead>
                         <tr>
                             {% for projet in projets %}
-                            <td>{{ projet.name_projet }}</td>
+                            <td>{{ projet.nameProjet }}</td>
                             <td>{{ projet.date_debut|date('d/m/Y') }}</td>
                             <td>{{ projet.date_butoir|date('d/m/Y') }}</tr>
-                            <td>{{ projet.description }}</tr>
+
 
                             </tr>
                     </table>
