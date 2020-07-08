@@ -28,6 +28,11 @@ class Fonction
     private $id;
 
     /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Fonction", mappedBy="fonction")
+     */
+
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom_fonction", type="string", length=255)
@@ -68,9 +73,6 @@ class Fonction
     {
         return $this->nomFonction;
     }
-    public function __construct() {
-        $this->collabs = new ArrayCollection();
-    }
 
 
     /**
@@ -105,5 +107,11 @@ class Fonction
     public function getCollabs()
     {
         return $this->collabs;
+    }
+
+    public function __construct()
+    {
+        $this->collabs = new ArrayCollection();
+
     }
 }

@@ -21,6 +21,17 @@ class Collab
      * @JoinTable(name="collabs_roles")
      */
     private $roles;
+    /**
+
+     * @ManyToMany(targetEntity="ProjetBundle\Entity\Projet", inversedBy="collabs")
+     * @JoinTable(name="projets_collabs")
+     */
+    private $projets;
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Fonction", inversedBy="collabs")
+     * @JoinTable(name="collabs_fonctions")
+     */
+    private $fonctions;
 
     /**
      * @var int
@@ -197,43 +208,11 @@ class Collab
     {
         return $this->telCollab;
     }
-    public function __construct() {
+    public function __construct()
+    {
+        $this->fonctions = new ArrayCollection();
+
         $this->roles = new ArrayCollection();
 
-        $this->fonctions = new ArrayCollection();
-    }
-
-    /**
-     * Add role
-     *
-     * @param \CollaborateurBundle\Entity\Role $role
-     *
-     * @return Collab
-     */
-    public function addRole(\CollaborateurBundle\Entity\Role $role)
-    {
-        $this->roles[] = $role;
-
-        return $this;
-    }
-
-    /**
-     * Remove role
-     *
-     * @param \CollaborateurBundle\Entity\Role $role
-     */
-    public function removeRole(\CollaborateurBundle\Entity\Role $role)
-    {
-        $this->roles->removeElement($role);
-    }
-
-    /**
-     * Get roles
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getRoles()
-    {
-        return $this->roles;
     }
 }

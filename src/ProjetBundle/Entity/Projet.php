@@ -3,6 +3,7 @@
 namespace ProjetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Projet
@@ -17,6 +18,11 @@ class Projet
      * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projets")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      */
+
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="projets")
+     */
+
     private $client;
 
     /**
@@ -341,5 +347,36 @@ class Projet
     public function getClient()
     {
         return $this->client;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->client = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add client
+     *
+     * @param \CollaborateurBundle\Entity\Collab $client
+     *
+     * @return Projet
+     */
+    public function addClient(\CollaborateurBundle\Entity\Collab $client)
+    {
+        $this->client[] = $client;
+
+        return $this;
+    }
+
+    /**
+     * Remove client
+     *
+     * @param \CollaborateurBundle\Entity\Collab $client
+     */
+    public function removeClient(\CollaborateurBundle\Entity\Collab $client)
+    {
+        $this->client->removeElement($client);
     }
 }
