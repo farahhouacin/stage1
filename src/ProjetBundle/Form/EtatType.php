@@ -15,16 +15,9 @@ class EtatType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-//        const MAQUETTE = 'maquette';
-//        const ENCOURS = 'encours';
-//        const FIN = 'fin';
-
         $builder
 //            ->add('nameEtat', ChoiceType::class, [
 //                'nameEtat' => [
-//                    'En cours de validation (maquette)' => self::MAQUETTE,
-//                    'En cours de réalisation' => self::ENCOURS,
-//                    'Terminé' => self::FIN
 //                ],
 //                'label' => 'Etat',
 //                'expanded' => 'true',
