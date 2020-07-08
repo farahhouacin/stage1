@@ -202,38 +202,4 @@ class Collab
 
         $this->fonctions = new ArrayCollection();
     }
-
-    /**
-     * Add role
-     *
-     * @param \CollaborateurBundle\Entity\Role $role
-     *
-     * @return Collab
-     */
-    public function addRole(\CollaborateurBundle\Entity\Role $role)
-    {
-        $this->roles[] = $role;
-
-        return $this;
-    }
-
-    /**
-     * Remove role
-     *
-     * @param \CollaborateurBundle\Entity\Role $role
-     */
-    public function removeRole(\CollaborateurBundle\Entity\Role $role)
-    {
-        $this->roles->removeElement($role);
-    }
-
-    /**
-     * Get roles
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getRoles()
-    {
-        return $this->roles;
-    }
 }

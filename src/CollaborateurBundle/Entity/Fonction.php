@@ -2,7 +2,9 @@
 
 namespace CollaborateurBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Fonction
@@ -12,6 +14,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Fonction
 {
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="roles")
+     */
+    private $collabs;
     /**
      * @var int
      *
@@ -61,5 +67,43 @@ class Fonction
     public function getNomFonction()
     {
         return $this->nomFonction;
+    }
+    public function __construct() {
+        $this->collabs = new ArrayCollection();
+    }
+
+
+    /**
+     * Add collab
+     *
+     * @param \CollaborateurBundle\Entity\Collab $collab
+     *
+     * @return Fonction
+     */
+    public function addCollab(\CollaborateurBundle\Entity\Collab $collab)
+    {
+        $this->collabs[] = $collab;
+
+        return $this;
+    }
+
+    /**
+     * Remove collab
+     *
+     * @param \CollaborateurBundle\Entity\Collab $collab
+     */
+    public function removeCollab(\CollaborateurBundle\Entity\Collab $collab)
+    {
+        $this->collabs->removeElement($collab);
+    }
+
+    /**
+     * Get collabs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCollabs()
+    {
+        return $this->collabs;
     }
 }
