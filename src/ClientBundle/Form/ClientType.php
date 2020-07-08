@@ -2,6 +2,7 @@
 
 namespace ClientBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -26,6 +27,11 @@ class ClientType extends AbstractType
                 'label' => 'Tel du Client'] )
             ->add('emailClient', EmailType::class, [
             'label' => 'Email du Client'])
+            ->add('roles', EntityType::class, [
+                'class' => 'CollaborateurBundle:Role',
+                'choice_label' => 'nom_role',
+
+            ])
             ->add('save', SubmitType::class,  [
                 'label' => 'Ajouter',
                 'attr' => [

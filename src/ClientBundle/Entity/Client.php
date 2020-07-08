@@ -27,9 +27,6 @@ class Client
 
 
 
-
-
-
     /**
      * @var int
      *
