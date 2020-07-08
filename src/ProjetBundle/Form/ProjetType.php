@@ -32,11 +32,11 @@ class ProjetType extends AbstractType
             ->add('url', UrlType::class)
             ->add('clients', EntityType::class, [
                 'class' => 'ClientBundle:Client',
-                'choice_label' => 'name_client', 'firstname_client'
+                'choice_label' => 'name_client, firstname_collab'
             ])
             ->add('collabs', EntityType::class, [
                 'class' => 'CollaborateurBundle:Collab',
-                'choice_label' => 'name_collab', 'firstname_collab'
+                'choice_label' => 'name_collab, firstname_collab'
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer',
