@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block nom_client %}
+    Modification du rôle
+{% endblock %}
+
+{%  block body %}
+    <div id="page-wrapper">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <br>
+                        <h3 class="box-title">Editer le rôle</h3>
+                        <br><br>
+                        <div class="table-responsive">
+                            <table class="table">
+                                {{form(form)}}
+                            </table>
+                            <br><br>
+                            <a href="{{ path('settings') }}">Accueil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
