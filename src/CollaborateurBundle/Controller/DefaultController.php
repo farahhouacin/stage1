@@ -104,6 +104,18 @@ class DefaultController extends Controller
         ]);
     }
 
+
+    /**
+     * @Route(name="index-role")
+     */
+    public function indexRole()
+    {
+        $roles = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Role')->findAll();
+        return $this->render('indexRole.html.twig', [
+            'roles' => $roles
+        ]);
+    }
+
     /**
      * @Route ("/newrole", name="new-role")
      */
@@ -155,6 +167,18 @@ class DefaultController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('settings');
+    }
+
+
+    /**
+     * @Route(name="index-fonction")
+     */
+    public function indexFonction()
+    {
+        $fonctions = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Fonction')->findAll();
+        return $this->render('indexFonction.html.twig', [
+            'fonctions' => $fonctions
+        ]);
     }
 
 
