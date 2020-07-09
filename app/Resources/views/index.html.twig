@@ -81,6 +81,11 @@
                                                                              aria-hidden="true"></i><span
                             class="hide-menu">Collaborateurs</span></a>
             </li>
+            <li>
+                <a href="{{ path('settings') }}" class="waves-effect"><i class="fa fa-info-circle fa-fw"
+                                                                         aria-hidden="true"></i><span
+                            class="hide-menu">Settings</span></a>
+            </li>
         </ul>
         <div class="center p-20">
         </div>
@@ -165,6 +170,7 @@
                                 <tr>
                                     <th>#</th>
                                     <td>Nom du client</td>
+                                    <td>Prénom du client</td>
                                     <td>Nom du projet</td>
                                     <td>Date butoir</td>
                                 </tr>
@@ -175,7 +181,8 @@
                                         <td>{{ client.firstnameClient }}</td>
                                     {% endfor %}
                                     {% for projet in projets %}
-                                        <td>{{ projet.date_butoir|date('d/m/Y') }}</td>
+                                        <td> {{ projet.nameProjet }}</td>
+                                        <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
                                     {% endfor %}
                                 </tr>
                             </table>
@@ -204,10 +211,9 @@
                                 </thead>
                                 <td>
                                     {% for projet in projets %}
-
                                         <td>{{ projet.nameProjet }}</td>
-                                        <td>{{ projet.date_modif|date('d/m/Y') }}</td>
-                                        <td>{{ projet.date_butoir|date('d/m/Y') }}</td>
+                                       {# <td>{{ projet.dateModif|date('d/m/Y') }}</td> #}
+                                        <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
                                     {% endfor %}
                                 </tr>
                             </table>

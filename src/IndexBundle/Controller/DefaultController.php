@@ -21,4 +21,15 @@ class DefaultController extends Controller
         ]);
 
     }
+
+    /**
+     * @Route(name="settings")
+     */
+    public function indexCollab()
+    {
+        $settings = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->findAll();
+        return $this->render('settings.html.twig', [
+            'settings' => $settings
+        ]);
+    }
 }
