@@ -3,6 +3,7 @@
 namespace ProjetBundle\Controller;
 
 use ProjetBundle\Form\EtatType;
+use ProjetBundle\Entity\Etat;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -93,7 +94,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/etat", name="etat")
+     * @Route("/etat", name="index-etat")
      */
     public function indexEtat()
     {
@@ -116,6 +117,7 @@ class DefaultController extends Controller
 
             $em->persist($etat);
             $em->flush();
+            return $this->redirectToRoute('etat');
         }
 
         return $this->render('newetat.html.twig', [

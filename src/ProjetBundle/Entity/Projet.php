@@ -326,19 +326,19 @@ class Projet
         return $this->url;
     }
 
-    /**
-     * Set client
-     *
-     * @param \ClientBundle\Entity\Client $client
-     *
-     * @return Projet
-     */
-    public function setClient(\ClientBundle\Entity\Client $client = null)
-    {
-        $this->client = $client;
+ //   /**
+//     * Set client
+  //   *
+//     * @param \ClientBundle\Entity\Client $client
+  //   *
+ //    * @return Projet
+ //    */
+ //   public function setClient(\ClientBundle\Entity\Client $client = null)
+ //   {
+ //       $this->client = $client;
 
-        return $this;
-    }
+  //      return $this;
+//    }
 
 //    /**
 //    //     * Constructor
