@@ -89,6 +89,20 @@ class DefaultController extends Controller
             'form' => $projetForm->createView()
         ]);
     }
+
+
+
+    /**
+     * @Route("/etat", name="etat")
+     */
+    public function indexEtat()
+    {
+        $etats = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
+        return $this->render('etat.html.twig', [
+            'etats' => $etats
+        ]);
+    }
+
     /**
      * @Route ("/newetat", name="new-etat")
      */
