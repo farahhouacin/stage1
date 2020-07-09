@@ -149,7 +149,7 @@ class DefaultController extends Controller
         $em->remove($role);
         $em->flush();
 
-        return $this->redirectToRoute('index-collab');
+        return $this->redirectToRoute('settings');
     }
 
 
@@ -206,7 +206,7 @@ class DefaultController extends Controller
         $em->remove($fonction);
         $em->flush();
 
-        return $this->redirectToRoute('index-collab');
+        return $this->redirectToRoute('settings');
     }
 
 }
