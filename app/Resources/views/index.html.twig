@@ -31,7 +31,7 @@
 </head>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top m-b-0">
-    <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
+    <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="{{ asset("javascript:void(0)") }}" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
         <div class="top-left-part"><a class="logo" href="index"><b><img src="{{ asset("plugins/images/pixeladmin-logo.png")}}" alt="home" /></b>
                 <span class="hidden-xs"><img src="{{ asset("plugins/images/logoluuug.png")}}" alt="home"></span></a></div>
         <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs">
@@ -148,15 +148,7 @@
                             <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
                                 <h5><a href="{{ asset("collab") }}" class="text-muted vb">COLLABORATEUR</a></h5> </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <h3 class="counter text-right m-t-15 text-primary">(<?php
-$values = $qb->getQuery()->getScalarResult();
-
-                                    foreach ($values as $value) {
-                                    // $value est la valeur de ce qui a été sélectionné : un nombre, un texte, etc.
-                                    $value;
-
-                                    // Faire $value->getAttribute() ou $value['attribute'] est impossible
-                                    }"SELECT COUNT(*) id FROM collaborateur")</h3> </div>
+                                <h3 class="counter text-right m-t-15 text-primary">12</h3> </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
