@@ -43,6 +43,7 @@ class DefaultController extends Controller
 
             $em->persist($collab);
             $em->flush();
+            return $this->redirectToRoute('index-collab');
         }
         return $this->render('newcollab.html.twig', [
             'form' => $collabForm->createView()
@@ -61,6 +62,9 @@ class DefaultController extends Controller
         $collabForm = $this->createForm(CollabType::class, $collab);
 
         if ($request->isMethod('POST') && $collabForm->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($collab);
             $em->flush();
             return $this->redirectToRoute('index-collab');
         }
@@ -113,6 +117,7 @@ class DefaultController extends Controller
 
             $em->persist($role);
             $em->flush();
+            return $this->redirectToRoute('settings');
         }
         return $this->render('newrole.html.twig', [
             'form' => $roleForm->createView()
@@ -166,6 +171,7 @@ class DefaultController extends Controller
 
             $em->persist($fonction);
             $em->flush();
+            return $this->redirectToRoute('settings');
         }
         return $this->render('newfonction.html.twig', [
             'form' => $fonctionForm->createView()
