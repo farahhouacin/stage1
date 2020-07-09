@@ -153,6 +153,6 @@ class DefaultController extends Controller
         $em->remove($etat);
         $em->flush();
 
-        return $this->redirectToRoute('index-projet');
+        return $this->redirectToRoute('index-etat');
     }
 }
