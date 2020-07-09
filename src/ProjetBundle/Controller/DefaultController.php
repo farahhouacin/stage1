@@ -117,7 +117,7 @@ class DefaultController extends Controller
 
             $em->persist($etat);
             $em->flush();
-            return $this->redirectToRoute('etat');
+            return $this->redirectToRoute('settings');
         }
 
         return $this->render('newetat.html.twig', [

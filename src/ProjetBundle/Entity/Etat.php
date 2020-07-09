@@ -29,21 +29,6 @@ class Etat
     protected $nameEtat;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_deb", type="date")
-     */
-    private $dateDeb;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_fin", type="date")
-     */
-    private $dateFin;
-
-
-    /**
      * Get id
      *
      * @return int
@@ -77,51 +62,5 @@ class Etat
         return $this->nameEtat;
     }
 
-    /**
-     * Set dateDeb
-     *
-     * @param \DateTime $dateDeb
-     *
-     * @return Etat
-     */
-    public function setDateDeb($dateDeb)
-    {
-        $this->dateDeb = $dateDeb;
 
-        return $this;
-    }
-
-    /**
-     * Get dateDeb
-     *
-     * @return \DateTime
-     */
-    public function getDateDeb()
-    {
-        return $this->dateDeb;
-    }
-
-    /**
-     * Set dateFin
-     *
-     * @param \DateTime $dateFin
-     *
-     * @return Etat
-     */
-    public function setDateFin($dateFin)
-    {
-        $this->dateFin = $dateFin;
-
-        return $this;
-    }
-
-    /**
-     * Get dateFin
-     *
-     * @return \DateTime
-     */
-    public function getDateFin()
-    {
-        return $this->dateFin;
-    }
 }
