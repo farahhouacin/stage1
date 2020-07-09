@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+
 class DefaultController extends Controller
 {
     /**
@@ -23,7 +24,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(name="settings")
+     * @Route("/settings", name="settings")
      */
     public function indexCollab()
     {
@@ -32,4 +33,14 @@ class DefaultController extends Controller
             'settings' => $settings
         ]);
     }
+
+    /**
+     * @Route("/login",name="login")
+     */
+    public function login()
+    {
+        //$login = $this->getDoctrine()->getManager()->getRepository('IndexBundle:Index')->findAll();
+        return $this->render('login.html.twig');
+    }
+
 }
