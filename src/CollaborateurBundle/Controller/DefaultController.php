@@ -129,7 +129,7 @@ class DefaultController extends Controller
 
             $em->persist($role);
             $em->flush();
-            return $this->redirectToRoute('settings');
+            return $this->redirectToRoute('index-role');
         }
         return $this->render('newrole.html.twig', [
             'form' => $roleForm->createView()
@@ -149,7 +149,7 @@ class DefaultController extends Controller
 
         if ($request->isMethod('POST') && $roleForm->handleRequest($request)->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('index-collab');
+            return $this->redirectToRoute('index-role');
         }
 
         return $this->render('editrole.html.twig', [
@@ -166,7 +166,7 @@ class DefaultController extends Controller
         $em->remove($role);
         $em->flush();
 
-        return $this->redirectToRoute('settings');
+        return $this->redirectToRoute('index-role');
     }
 
 
@@ -195,15 +195,12 @@ class DefaultController extends Controller
 
             $em->persist($fonction);
             $em->flush();
-            return $this->redirectToRoute('settings');
+            return $this->redirectToRoute('index-fonction');
         }
         return $this->render('newfonction.html.twig', [
             'form' => $fonctionForm->createView()
         ]);
     }
-
-
-
 
     /**
      * @Route("/editfonction/{id}", name="edit-fonction")
@@ -219,7 +216,7 @@ class DefaultController extends Controller
 
         if ($request->isMethod('POST') && $fonctionForm->handleRequest($request)->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('index-collab');
+            return $this->redirectToRoute('index-fonction');
         }
 
         return $this->render('editfonction.html.twig', [
@@ -236,7 +233,7 @@ class DefaultController extends Controller
         $em->remove($fonction);
         $em->flush();
 
-        return $this->redirectToRoute('settings');
+        return $this->redirectToRoute('index-fonction');
     }
 
 }

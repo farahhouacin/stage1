@@ -21,7 +21,7 @@ class EtatType extends AbstractType
                 'label' => 'Etat'
             ])
             ->add('save', SubmitType::class,  [
-                'label' => 'Ajouter un état',
+                'label' => 'Enregistrer',
                 'attr' => [
                     'class' => 'btn'
                 ]

@@ -117,7 +117,7 @@ class DefaultController extends Controller
 
             $em->persist($etat);
             $em->flush();
-            return $this->redirectToRoute('settings');
+            return $this->redirectToRoute('index-etat');
         }
 
         return $this->render('newetat.html.twig', [
@@ -136,7 +136,7 @@ class DefaultController extends Controller
 
         if ($request->isMethod('POST') && $etatForm->handleRequest($request)->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('index-projet');
+            return $this->redirectToRoute('index-etat');
         }
 
         return $this->render('editetat.html.twig', [
