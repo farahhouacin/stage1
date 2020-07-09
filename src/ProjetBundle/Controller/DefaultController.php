@@ -16,12 +16,12 @@ use ProjetBundle\Form\ProjetType;
 class DefaultController extends Controller
 {
     /**
-     * @Route("", name="index-projet")
+     * @Route("/index", name="index-projet")
      */
     public function indexProjet()
     {
         $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
-        return $this->render('indexprojet.html.twig', [
+        return $this->render(' indexprojet.html.twig', [
             'projets' => $projets
         ]);
     }
@@ -78,7 +78,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/detailsprojet/{id}", name="details-projet")
+     * @Route("/details/{id}", name="details-projet")
      */
     public function detailsProjet($id, Request $request)
     {

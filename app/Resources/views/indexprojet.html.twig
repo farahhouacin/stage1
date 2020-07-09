@@ -17,14 +17,12 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title">Ils travaillent avec nous</h3>
+                <h3 class="box-title"> Projets </h3>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                         <tr>
-                            <td>Nom du projet</td>
-                            <td>Date de début</td>
-                            <td>Date butoire</td>
+                            <td>Titre</td>
                             <td>Action</td>
 
                         </tr>
@@ -32,8 +30,6 @@
                         {% for projet in projets %}
                             <tr>
                                 <td>{{ projet.nameProjet }}</td>
-                                <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
-                                <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
                                 <td>
                                     <a href={{ path('edit-projet', {id:projet.id}) }}>Modifier</a>
                                     <a href={{ path('delete-projet', {id:projet.id}) }}>Supprimer</a>

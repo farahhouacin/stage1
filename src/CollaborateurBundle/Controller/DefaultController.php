@@ -106,7 +106,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route(name="index-role")
+     * @Route("/role",name="index-role")
      */
     public function indexRole()
     {
@@ -171,7 +171,7 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route(name="index-fonction")
+     * @Route("/fonction",name="index-fonction")
      */
     public function indexFonction()
     {

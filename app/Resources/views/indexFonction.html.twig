@@ -27,12 +27,12 @@
                                 </tr>
                                 </thead>
 
-                                {% for etat in etats %}
+                                {% for fonction in fonctions %}
                                 <tr>
                                     <td>{{ fonction.nomFonction }}</td>
                                     <td>
-                                        <a href={{ path('edit-fonction', {id:etat.id}) }}>Modifier</a>
-                                        <a href={{ path('delete-fonction', {id:etat.id}) }}>Supprimer</a>
+                                        <a href={{ path('edit-fonction', {id:fonction.id}) }}>Modifier</a>
+                                        <a href={{ path('delete-fonction', {id:fonction.id}) }}>Supprimer</a>
                                     </td>
                                 <tr>
                                     {% endfor %}

@@ -20,7 +20,7 @@ class FonctionType extends AbstractType
                 'label' => 'Fonction'
             ])
             ->add('save', SubmitType::class,  [
-                'label' => 'Ajouter une fonction',
+                'label' => 'Enregistrer',
                 'attr' => [
                     'class' => 'btn'
                 ]

@@ -32,7 +32,7 @@ class ClientType extends AbstractType
 //                'choice_label' => 'nom_role',
 //            ])
             ->add('save', SubmitType::class,  [
-                'label' => 'Ajouter',
+                'label' => 'Enregistrer',
                 'attr' => [
                     'class' => 'btn'
                 ]

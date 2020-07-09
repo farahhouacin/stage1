@@ -61,7 +61,7 @@ class DefaultController extends Controller
             return $this->redirectToRoute('index-client');
         }
 
-        return $this->render('edit.html.twig', [
+        return $this->render('editClient.html.twig', [
             'form' => $clientForm->createView()
         ]);
     }

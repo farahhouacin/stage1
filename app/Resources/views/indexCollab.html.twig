@@ -21,9 +21,9 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <td>Nom du collaborateur</td>
-                            <td>Prénom du collaborateur</td>
-                            <td>Email du collaborateur</td>
+                            <td>Nom </td>
+                            <td>Prénom </td>
+                            <td>Email </td>
                             <td>Action</td>
                         </tr>
                         </thead>
@@ -37,7 +37,6 @@
                                     <a href={{ path('edit-collab', {id:collab.id}) }}>Modifier</a>
                                     <a href={{ path('delete-collab', {id:collab.id}) }}>Supprimer</a>
                                 </td>
-                                {#<td>{{ collab.fonctionCollab }}</tr>#}
                             </tr>
                         {% endfor %}
 

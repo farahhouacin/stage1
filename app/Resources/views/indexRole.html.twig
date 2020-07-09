@@ -27,12 +27,12 @@
                                 </tr>
                                 </thead>
 
-                                {% for etat in etats %}
+                                {% for role in roles %}
                                 <tr>
                                     <td>{{ role.nomRole }}</td>
                                     <td>
-                                        <a href={{ path('edit-role', {id:etat.id}) }}>Modifier</a>
-                                        <a href={{ path('delete-role', {id:etat.id}) }}>Supprimer</a>
+                                        <a href={{ path('edit-role', {id:role.id}) }}>Modifier</a>
+                                        <a href={{ path('delete-role', {id:role.id}) }}>Supprimer</a>
                                     </td>
                                 <tr>
                                     {% endfor %}

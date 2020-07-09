@@ -21,10 +21,10 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <td>Nom du client</td>
-                            <td>Prénom du client</td>
-                            <td>Téléphone client</td>
-                            <td>Email client</td>
+                            <td>Nom </td>
+                            <td>Prénom </td>
+                            <td>Téléphone </td>
+                            <td>Email </td>
                             <td>Action</td>
                         </tr>
                         </thead>
@@ -38,7 +38,6 @@
                             <td>
                                 <a href={{ path('edit-client', {id:client.id}) }}>Modifier</a>
                                 <a href={{ path('delete-client', {id:client.id}) }}>Supprimer</a>
-                                {#<a href="{{ path('details-client', {id:client.id}) }}"> Détails</a>#}
                             </td>
                             <tr>
                         {% endfor %}

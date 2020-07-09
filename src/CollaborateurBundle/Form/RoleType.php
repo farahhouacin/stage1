@@ -21,7 +21,7 @@ class RoleType extends AbstractType
                 'label' => 'Rôle'
             ] )
             ->add('save', SubmitType::class, [
-                    'label' => 'Ajouter un rôle',
+                    'label' => 'Enregistrer',
                     'attr' => [
                         'class' => 'btn'
                     ]
