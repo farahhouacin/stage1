@@ -38,14 +38,14 @@ class Projet
     /**
      * @var string
      *
-     * @ORM\Column(name="name_projet", type="string", length=20)
+     * @ORM\Column(name="name_projet", type="string", length=40)
      */
     private $nameProjet;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=50)
+     * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
 
@@ -73,28 +73,28 @@ class Projet
     /**
      * @var string
      *
-     * @ORM\Column(name="fonctionnalite", type="string", length=30)
+     * @ORM\Column(name="fonctionnalite", type="string", length=255)
      */
     private $fonctionnalite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="hebergement", type="string", length=50)
+     * @ORM\Column(name="hebergement", type="string", length=255)
      */
     private $hebergement;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="preprod", type="string", length=30)
+     * @ORM\Column(name="preprod", type="string", length=255)
      */
     private $preprod;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=30)
+     * @ORM\Column(name="url", type="string", length=255)
      */
     private $url;
 

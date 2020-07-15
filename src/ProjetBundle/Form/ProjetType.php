@@ -24,9 +24,15 @@ class ProjetType extends AbstractType
                 'label' => 'Nom du projet'
             ])
             ->add('description', TextType::class)
-            ->add('dateDebut', DateType::class)
-            ->add('dateFin', DateType::class)
-            ->add('dateButoir', DateType::class)
+            ->add('dateDebut', DateType::class,[
+                'widget' => 'choice'
+            ])
+            ->add('dateFin', DateType::class,[
+                'widget' => 'choice'
+            ])
+            ->add('dateButoir', DateType::class,[
+                'widget' => 'choice'
+            ])
             ->add('fonctionnalite', TextareaType::class)
             ->add('hebergement', TextType::class)
             ->add('preprod', TextType::class)
