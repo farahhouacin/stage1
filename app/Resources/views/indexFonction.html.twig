@@ -31,8 +31,8 @@
                                 <tr>
                                     <td>{{ fonction.nomFonction }}</td>
                                     <td>
-                                        <a href={{ path('edit-fonction', {id:fonction.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
-                                        <a href={{ path('delete-fonction', {id:fonction.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
+                                        <a href={{ path('edit-fonction', {id:fonction.id}) }}><i class="fa fa-edit"></i></a>
+                                        <a href={{ path('delete-fonction', {id:fonction.id}) }}><i class="fa fa-trash"></i></a>
                                     </td>
                                 <tr>
                                     {% endfor %}
