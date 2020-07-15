@@ -52,7 +52,7 @@ class ProjetType extends AbstractType
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer',
                 'attr' => [
-                    'class' => 'btn'
+                    'class' => 'bouton'
                 ]
             ]);
     }

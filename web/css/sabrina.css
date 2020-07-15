@@ -1,7 +1,7 @@
-<style>
+
 .bouton {
-  background-color: #008000;
-  border: none;
+  background-color: dodgerblue;
+  border: black;
   color: white;
   margin: 10px;
   padding: 10px;
@@ -12,7 +12,23 @@
   cursor: pointer;
 }
 .bouton:hover {
-  background-color: #225222;
+  background-color: cornflowerblue;
   color: white;
 }
-</style>
+
+.hari {
+  background-color: darkred;
+  border: black;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
+.hari:hover {
+  background-color: indianred;
+  color: white;
+}
