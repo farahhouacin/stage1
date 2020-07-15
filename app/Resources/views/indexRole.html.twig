@@ -31,8 +31,8 @@
                                 <tr>
                                     <td>{{ role.nomRole }}</td>
                                     <td>
-                                        <a href={{ path('edit-role', {id:role.id}) }}>Modifier</a>
-                                        <a href={{ path('delete-role', {id:role.id}) }}>Supprimer</a>
+                                        <a href={{ path('edit-role', {id:role.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
+                                        <a href={{ path('delete-role', {id:role.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
                                     </td>
                                 <tr>
                                     {% endfor %}

@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title">Nos clients</h3>
+                <h3 class="box-title"></h3>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -36,8 +36,8 @@
                             <td>{{ client.telClient }}</td>
                             <td>{{ client.emailClient }}</td>
                             <td>
-                                <a href={{ path('edit-client', {id:client.id}) }}>Modifier</a>
-                                <a href={{ path('delete-client', {id:client.id}) }}>Supprimer</a>
+                                <a href={{ path('edit-client', {id:client.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
+                                <a href={{ path('delete-client', {id:client.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
                             </td>
                             <tr>
                         {% endfor %}

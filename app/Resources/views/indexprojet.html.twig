@@ -6,7 +6,7 @@
     <div class="container-fluid">
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Projet</h4></div>
+            <h4 class="page-title">Projets</h4></div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
                 <a href="{{ path("new-projet") }}">Nouveau Projet</a>
@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title"> Projets </h3>
+                <h3 class="box-title"></h3>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -29,10 +29,10 @@
                         </thead>
                         {% for projet in projets %}
                             <tr>
-                                <td>{{ projet.nameProjet }}</td>
+                                <td><a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a></td>
                                 <td>
-                                    <a href={{ path('edit-projet', {id:projet.id}) }}>Modifier</a>
-                                    <a href={{ path('delete-projet', {id:projet.id}) }}>Supprimer</a>
+                                    <a href={{ path('edit-projet', {id:projet.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
+                                    <a href={{ path('delete-projet', {id:projet.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
                                 </td>
                             </tr>
                         {% endfor %}
