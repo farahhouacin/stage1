@@ -36,8 +36,8 @@
                                     <td>{{ client.telClient }}</td>
                                     <td>{{ client.emailClient }}</td>
                                     <td>
-                                        <a href={{ path('edit-client', {id:client.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
-                                        <a href={{ path('delete-client', {id:client.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
+                                        <a href={{ path('edit-client', {id:client.id}) }}><i class="fa fa-edit"></i></a>
+                                        <a href={{ path('delete-client', {id:client.id}) }}><i class="fa fa-trash"></i></a>
                                     </td>
                                 <tr>
                                     {% endfor %}

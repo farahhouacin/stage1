@@ -34,8 +34,8 @@
                                 <td>{{ collab.firstnameCollab }}</td>
                                 <td>{{ collab.emailCollab }}</td>
                                 <td>
-                                    <a href={{ path('edit-collab', {id:collab.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
-                                    <a href={{ path('delete-collab', {id:collab.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
+                                    <a href={{ path('edit-collab', {id:collab.id}) }}><i class="fa fa-edit"></i></a>
+                                    <a href={{ path('delete-collab', {id:collab.id}) }}><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         {% endfor %}

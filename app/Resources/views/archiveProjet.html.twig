@@ -32,6 +32,10 @@
                         <td><a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a></td>
                         <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
                         <td>{{ projet.dateFin|date('d/m/Y') }}</td>
+                            <td>
+                                <a href={{ path('edit-projet', {id:projet.id}) }}><i class="fa fa-edit"></i></a>
+                                <a href={{ path('delete-projet', {id:projet.id}) }}><i class="fa fa-trash"></i></a>
+                            </td>
                         <tr>
                         {% endfor %}
                     </table>
