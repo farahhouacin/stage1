@@ -36,6 +36,8 @@ class DefaultController extends Controller
         if ($request->isMethod('POST') && $projetForm->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
+            $projet->setDate(new \DateTime('now'));
+
             $em->persist($projet);
             $em->flush();
             return $this->redirectToRoute('index-projet');
@@ -135,6 +137,7 @@ class DefaultController extends Controller
         $etatForm = $this->createForm(EtatType::class, $etat);
 
         if ($request->isMethod('POST') && $etatForm->handleRequest($request)->isValid()) {
+
             $em->flush();
             return $this->redirectToRoute('index-etat');
         }
