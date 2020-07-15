@@ -43,4 +43,13 @@ class DefaultController extends Controller
         return $this->render('login.html.twig');
     }
 
+    /**
+     * @Route("/archive",name="archive")
+     */
+    public function archive()
+    {
+        $archive = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
+        return $this->render('archive.html.twig');
+    }
+
 }
