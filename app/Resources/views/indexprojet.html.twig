@@ -23,6 +23,8 @@
                         <thead>
                         <tr>
                             <td>Titre</td>
+                            <td>Date de début</td>
+                            <td>Date de fin</td>
                             <td>Action</td>
 
                         </tr>
@@ -30,12 +32,11 @@
                         {% for projet in projets %}
                             <tr>
                                 <td><a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a></td>
-                                <td>{{ projet.nameProjet }}</td>
                                 <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
                                 <td>{{ projet.dateFin|date('d/m/Y') }}</td>
                                 <td>
-                                    <a href={{ path('edit-projet', {id:projet.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
-                                    <a href={{ path('delete-projet', {id:projet.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
+                                    <a href={{ path('edit-projet', {id:projet.id}) }}><i class="fa fa-edit"></i></a>
+                                    <a href={{ path('delete-projet', {id:projet.id}) }}><i class="fa fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         {% endfor %}

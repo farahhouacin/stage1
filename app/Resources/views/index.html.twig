@@ -172,21 +172,21 @@
                         <h3 class="box-title">On s'approche de la fin</h3>
                         <div class="table-responsive">
                             <table class="table">
+                                <thead>
                                 <tr>
-                                    <th>#</th>
                                     <td>Nom du client</td>
                                     <td>Prénom du client</td>
                                     <td>Nom du projet</td>
                                     <td>Date butoir</td>
                                 </tr>
                                 </thead>
-                                <td>
+                                <tr>
                                     {% for client in clients %}
-                                        <td>{{ client.nameClient }}</td>
+                                        <td><a href="{{ path ('details-client',{id:client.id}) }}">{{ client.nameClient }}</a></td>
                                         <td>{{ client.firstnameClient }}</td>
                                     {% endfor %}
                                     {% for projet in projets %}
-                                        <td> {{ projet.nameProjet }}</td>
+                                        <td> <a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a></td>
                                         <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
                                     {% endfor %}
                                 </tr>
@@ -207,7 +207,6 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
                                     <td>Nom du projet</td>
                                     <td>Date de modification</td>
                                     <td>Date butoir</td>
@@ -215,11 +214,13 @@
                                 </thead>
                                 <td>
                                     {% for projet in projets %}
-                                        <td>{{ projet.nameProjet }}</td>
-                                       {# <td>{{ projet.dateModif|date('d/m/Y') }}</td> #}
-                                        <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
+                                        <tr>
+                                            <td><a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a></td>
+                                            <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
+                                            <td>{{ projet.dateFin|date('d/m/Y') }}</td>
+                                        </tr>
                                     {% endfor %}
-                                </tr>
+                                </td>
                             </table>
                         </div>
                     </div>
