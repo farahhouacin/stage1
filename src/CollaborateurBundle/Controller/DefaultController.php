@@ -8,7 +8,6 @@ use CollaborateurBundle\Entity\Role;
 use CollaborateurBundle\Form\CollabType;
 use CollaborateurBundle\Form\FonctionType;
 use CollaborateurBundle\Form\RoleType;
-use Psr\Container\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -51,9 +50,6 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/edit/{id}", name="edit-collab")
-     * @param $id
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function editCollab($id, Request $request)
     {
@@ -137,9 +133,6 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/editrole/{id}", name="edit-role")
-     * @param $id
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function editRole($id, Request $request)
     {

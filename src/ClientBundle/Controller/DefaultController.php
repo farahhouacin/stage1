@@ -46,9 +46,6 @@ class DefaultController extends Controller
 
     /**
      * @Route("/edit/{id}", name="edit-client")
-     * @param $id
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function editClient($id, Request $request)
     {

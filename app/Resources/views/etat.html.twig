@@ -32,6 +32,7 @@
                                     <td>{{ etat.nameEtat }}</td>
                                     <td>
                                         <a href={{ path('edit-etat', {id:etat.id}) }}>Modifier</a>
+                                        <a href="{{ path('index-etat') }}">Annuler</a>
                                         <a href={{ path('delete-etat', {id:etat.id}) }}>Supprimer</a>
                                         {#<a href="{{ path('details-client', {id:client.id}) }}"> Détails</a>#}
                                     </td>

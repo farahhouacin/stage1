@@ -6,6 +6,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,14 +20,14 @@ class ProjetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nameProjet',  TextType::class, [
+            ->add('nameProjet', TextType::class, [
                 'label' => 'Nom du projet'
             ])
             ->add('description', TextType::class)
             ->add('dateDebut', DateType::class)
             ->add('dateFin', DateType::class)
             ->add('dateButoir', DateType::class)
-            ->add('fonctionnalite', TextType::class)
+            ->add('fonctionnalite', TextareaType::class)
             ->add('hebergement', TextType::class)
             ->add('preprod', TextType::class)
             ->add('url', UrlType::class)
