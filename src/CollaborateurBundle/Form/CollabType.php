@@ -47,7 +47,7 @@ class CollabType extends AbstractType
             ->add('save', SubmitType::class,  [
             'label' => 'Enregistrer',
             'attr' => [
-                'class' => 'btn'
+                'class' => 'btn bouton'
             ]
         ]);
     }/**

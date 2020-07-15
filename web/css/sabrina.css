@@ -1,0 +1,18 @@
+<style>
+.bouton {
+  background-color: #008000;
+  border: none;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
+.bouton:hover {
+  background-color: #225222;
+  color: white;
+}
+</style>
