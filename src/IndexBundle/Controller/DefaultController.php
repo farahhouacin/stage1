@@ -44,12 +44,47 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/archiveprojet",name="archiveprojet")
+     */
+    public function archiveProjet()
+    {
+        $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
+        return $this->render('archiveProjet.html.twig', [
+            'projets' => $projets,
+        ]);
+    }
+
+    /**
      * @Route("/archive",name="archive")
      */
     public function archive()
     {
-        $archive = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
+       // $archive = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
         return $this->render('archive.html.twig');
     }
+
+    /**
+     * @Route("/archiveclient",name="archiveclient")
+     */
+    public function archiveClient()
+    {
+        $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
+        return $this->render('archiveClient.html.twig', [
+            'clients' => $clients,
+        ]);
+    }
+
+    /**
+     * @Route("/archivecollab",name="archivecollab")
+     */
+    public function archiveCollab()
+    {
+        $collabs = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->findAll();
+        return $this->render('archiveCollaborateur.html.twig', [
+            'collabs' => $collabs,
+        ]);
+    }
+
+
 
 }

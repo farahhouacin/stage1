@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="page-wrapper">
+    <div class="container-fluid">
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h4 class="page-title">Collaborateurs</h4>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <a href="{{ path("new-collab") }}">Nouveau Collaborateur</a>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title">Ils travaillent avec nous</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>Nom </td>
+                            <td>Prénom </td>
+                            <td>Email </td>
+                            <td>Action</td>
+                        </tr>
+                        </thead>
+
+                        {% for collab in collabs %}
+                            <tr>
+                                <td><a href="{{ path ('details-collab',{id:collab.id}) }}">{{ collab.nameCollab }}</a></td>
+                                <td>{{ collab.firstnameCollab }}</td>
+                                <td>{{ collab.emailCollab }}</td>
+                                <td>
+                                    <a href={{ path('edit-collab', {id:collab.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
+                                    <a href={{ path('delete-collab', {id:collab.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {#<a href="{{ path('detailscollab-collab', {id:collab.id}) }}"> Détails</a><br><br>#}
+
+
+
+{% endblock %}

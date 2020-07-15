@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Clients</h4> </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <ol class="breadcrumb">
+                        <a href="{{ path("new-client") }}">Nouveau Client</a>
+                    </ol>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title"></h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <td>Nom </td>
+                                    <td>Prénom </td>
+                                    <td>Téléphone </td>
+                                    <td>Email </td>
+                                    <td>Action</td>
+                                </tr>
+                                </thead>
+
+                                {% for client in clients %}
+                                <tr>
+                                    <td><a href="{{ path ('details-client',{id:client.id}) }}">{{ client.nameClient }}</a></td>
+                                    <td>{{ client.firstnameClient }}</td>
+                                    <td>{{ client.telClient }}</td>
+                                    <td>{{ client.emailClient }}</td>
+                                    <td>
+                                        <a href={{ path('edit-client', {id:client.id}) }}><img src="{{ asset('plugins/images/modify.png') }}"></a>
+                                        <a href={{ path('delete-client', {id:client.id}) }}><img src="{{ asset('plugins/images/delete.png') }}"></a>
+                                    </td>
+                                <tr>
+                                    {% endfor %}
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
