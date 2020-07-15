@@ -99,7 +99,7 @@ class DefaultController extends Controller
     public function indexEtat()
     {
         $etats = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Etat')->findAll();
-        return $this->render('etat.html.twig', [
+        return $this->render('indexetat.html.twig', [
             'etats' => $etats
         ]);
     }
