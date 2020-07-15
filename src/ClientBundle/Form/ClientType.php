@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ClientType extends AbstractType
 {
@@ -21,11 +22,18 @@ class ClientType extends AbstractType
     {
         $builder
             ->add('nameClient', TextType::class,[
-                'label' => 'Nom du Client'])
+                'label' => 'Nom du Client',
+                'constraints'=>[
+                    new NotBlank()
+                ]
+            ])
             ->add('firstnameClient', TextType::class, [
                 'label' => 'Prénom du Client'])
             ->add('telClient', TelType::class,[
-                'label' => 'Tel du Client'] )
+                'label' => 'Tel du Client',
+                'constraints'=>[
+                    new NotBlank()
+                ]] )
             ->add('emailClient', EmailType::class, [
             'label' => 'Email du Client'])
 //            ->add('roles', EntityType::class, [

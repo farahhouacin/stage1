@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class EtatType extends AbstractType
 {
@@ -18,7 +19,10 @@ class EtatType extends AbstractType
     {
         $builder
             ->add('nameEtat', TextType::class, [
-                'label' => 'Etat'
+                'label' => 'Etat',
+                'constraints'=>[
+                    new NotBlank()
+                ]
             ])
             ->add('save', SubmitType::class,  [
                 'label' => 'Enregistrer',

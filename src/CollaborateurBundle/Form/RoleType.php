@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 
 class RoleType extends AbstractType
@@ -18,7 +19,10 @@ class RoleType extends AbstractType
     {
         $builder
             ->add('nomRole', TextType::class, [
-                'label' => 'Rôle'
+                'label' => 'Rôle',
+                'constraints'=>[
+                    new NotBlank()
+                ]
             ] )
             ->add('save', SubmitType::class, [
                     'label' => 'Enregistrer',

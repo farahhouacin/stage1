@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class CollabType extends AbstractType
 {
@@ -22,7 +23,10 @@ class CollabType extends AbstractType
     {
         $builder
             ->add('nameCollab', TextType::class, [
-                'label' => 'Nom'
+                'label' => 'Nom',
+                'constraints'=>[
+                    new NotBlank()
+                ]
             ])
             ->add('firstnameCollab', TextType::class,[
                 'label' => 'Prénom'

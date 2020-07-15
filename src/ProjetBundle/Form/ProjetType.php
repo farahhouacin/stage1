@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ProjetType extends AbstractType
 {
@@ -21,7 +22,10 @@ class ProjetType extends AbstractType
     {
         $builder
             ->add('nameProjet', TextType::class, [
-                'label' => 'Nom du projet'
+                'label' => 'Nom du projet',
+                'constraints'=>[
+                    new NotBlank()
+                ]
             ])
             ->add('description', TextType::class)
             ->add('dateDebut', DateType::class,[

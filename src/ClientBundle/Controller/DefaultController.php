@@ -83,10 +83,10 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('ClientBundle:Client')->find($id);
-        $clientForm = $this->createForm(ClientType::class, $client);
+
 
         return $this->render('detailsclient.html.twig', [
-            'form' => $clientForm->createView()
+            'client' => $client
         ]);
     }
 }
