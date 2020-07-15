@@ -28,7 +28,7 @@ class ProjetType extends AbstractType
                 'widget' => 'choice'
             ])
             ->add('dateFin', DateType::class,[
-                'widget' => 'choice'
+                'widget' => 'text'
             ])
             ->add('dateButoir', DateType::class,[
                 'widget' => 'choice'
