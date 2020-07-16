@@ -83,6 +83,10 @@ fos_user:
     firewall_name: main
     user_class: CollaborateurBundle\Entity\Collab
     from_email:
-        address: ""
-        sender_name: ""
+        address: "ertyu@sdf"
+        sender_name: "ertyui"
+
+security :
+    encoders:
+        FOS\CollaborateurBundle\Entity\Collab
 
