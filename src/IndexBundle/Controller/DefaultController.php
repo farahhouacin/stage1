@@ -36,12 +36,14 @@ class DefaultController extends Controller
 
     /**
      * @Route("/login",name="login")
-     */
+
     public function login()
     {
         //$login = $this->getDoctrine()->getManager()->getRepository('IndexBundle:Index')->findAll();
         return $this->render('login.html.twig');
     }
+     *
+     */
 
     /**
      * @Route("/archiveprojet",name="archiveprojet")

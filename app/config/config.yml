@@ -34,6 +34,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig']
 
 # Twig Configuration
 twig:
@@ -81,12 +83,7 @@ sensio_framework_extra:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: CollaborateurBundle\Entity\Collab
+    user_class: IndexBundle\Entity\User
     from_email:
         address: "ertyu@sdf"
         sender_name: "ertyui"
-
-security :
-    encoders:
-        FOS\CollaborateurBundle\Entity\Collab
-
