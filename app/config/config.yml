@@ -77,3 +77,12 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: CollaborateurBundle\Entity\Collab
+    from_email:
+        address: ""
+        sender_name: ""
+
