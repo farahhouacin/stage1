@@ -32,3 +32,11 @@
   background-color: indianred;
   color: white;
 }
+
+.fenetre {
+resizable: false;
+height: "auto";
+width: 400;
+modal: true;
+}
+
