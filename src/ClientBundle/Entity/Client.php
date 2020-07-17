@@ -15,16 +15,17 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Client
 {
+
     /**
      * @ORM\OneToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="client")
      */
     private $projets;
+
     /**
      * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="clients")
      * @JoinTable(name="clients_roles")
      */
     private $roles;
-
 
 
     /**
@@ -66,6 +67,12 @@ class Client
 
 
 
+    public function __construct()
+    {
+        $this->projets = new ArrayCollection();
+        $this->roles = new ArrayCollection();
+    }
+
     /**
      * Get id
      *
@@ -89,6 +96,8 @@ class Client
 
         return $this;
     }
+
+
 
     /**
      * Get nameClient
@@ -173,37 +182,6 @@ class Client
     }
 
 
-    public function myFindAll()
-    {
-
-        // Méthode 2 : en passant par le raccourci (je recommande)
-        $queryBuilder = $this->createQueryBuilder('a');
-
-        // On n'ajoute pas de critère ou tri particulier, la construction
-        // de notre requête est finie
-
-        // On récupère la Query à partir du QueryBuilder
-        $query = $queryBuilder->getQuery();
-
-        // On récupère les résultats à partir de la Query
-        $results = $query->getResult();
-
-        // On retourne ces résultats
-        return $results;
-    }
-
-
-    public function __construct()
-    {
-        $this->projets = new ArrayCollection();
-
-        $this->roles = new ArrayCollection();
-    }
-
-
-// src/OC/PlatformBundle/Entity/AdvertRepository.php
-
-
 
     /**
      * Add projet
@@ -271,5 +249,13 @@ class Client
     public function getRoles()
     {
         return $this->roles;
+    }
+
+    function setClientsRoles($clientsRoles) {
+
+        $this->clientsRoles = $clientsRoles;
+
+        return $this;
+
     }
 }

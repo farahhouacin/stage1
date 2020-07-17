@@ -14,15 +14,10 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Role
 {
-//    /**
-//     * @ManyToMany(targetEntity="ClientBundle\Entity\Client", mappedBy="roles")
-//     */
-//    private $clients;
-//
-//    /**
-//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="roles")
-//     */
-//    private $collabs;
+    /**
+     * @ManyToMany(targetEntity="ClientBundle\Entity\Client", mappedBy="roles")
+     */
+    private $clients;
 
 
     /**
@@ -77,11 +72,43 @@ class Role
     }
 
 
-//    public function __construct()
-//    {
-//        $this->clients = new ArrayCollection();
-//
-//        $this->collabs = new ArrayCollection();
-//    }
+    public function __construct()
+    {
+        $this->clients = new ArrayCollection();
+    }
 
+
+    /**
+     * Add client
+     *
+     * @param \ClientBundle\Entity\Client $client
+     *
+     * @return Role
+     */
+    public function addClient(\ClientBundle\Entity\Client $client)
+    {
+        $this->clients[] = $client;
+
+        return $this;
+    }
+
+    /**
+     * Remove client
+     *
+     * @param \ClientBundle\Entity\Client $client
+     */
+    public function removeClient(\ClientBundle\Entity\Client $client)
+    {
+        $this->clients->removeElement($client);
+    }
+
+    /**
+     * Get clients
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClients()
+    {
+        return $this->clients;
+    }
 }

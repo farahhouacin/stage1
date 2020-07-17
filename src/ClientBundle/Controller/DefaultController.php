@@ -34,6 +34,8 @@ class DefaultController extends Controller
 
         if ($request->isMethod('POST') && $clientForm->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
+//            var_dump($client);
+//            die();
             $em->persist($client);
             $em->flush();
             return $this->redirectToRoute('index-client');

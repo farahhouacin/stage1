@@ -14,22 +14,11 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Projet
 {
-
-//    /**
-//     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projets")
-//     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
-//     */
-//    private $clients;
-//    /**
-//     * @ORM\ManyToOne(targetEntity="EtatBundle\Entity\Etat", inversedBy="projets")
-//     * @ORM\JoinColumn(name="etat_date", referencedColumnName="id")
-//     */
-//    private $etats;
-//
-//    /**
-//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="projets")
-//     */
-//    private $collabs;
+    /**
+     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projets")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     */
+    private $client;
 
     /**
      * @var int
@@ -60,6 +49,13 @@ class Projet
      * @ORM\Column(name="date_debut", type="date")
      */
     private $dateDebut;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_update", type="datetime")
+     */
+    private $dateUpdate;
 
     /**
      * @var \DateTime
@@ -103,6 +99,12 @@ class Projet
      */
     private $url;
 
+
+    public function __construct()
+    {
+        $this->dateDebut = new \DateTime();
+        $this->dateUpdate = new \DateTime();
+    }
 
 
     /**
@@ -330,30 +332,57 @@ class Projet
     {
         return $this->url;
     }
+    /**
+     * Set dateUpdate
+     *
+     * @param \DateTime $dateUpdate
+     *
+     * @return Projet
+     */
+    public function setDateUpdate($dateUpdate)
+    {
+        $this->dateUpdate = $dateUpdate;
 
- //   /**
-//     * Set client
-  //   *
-//     * @param \ClientBundle\Entity\Client $client
-  //   *
- //    * @return Projet
- //    */
- //   public function setClient(\ClientBundle\Entity\Client $client = null)
- //   {
- //       $this->client = $client;
+        return $this;
+    }
 
-  //      return $this;
-//    }
-//
-//    /**
-//    //     * Constructor
-//    //     */
-//    public function __construct()
-//    {
-//        $this->clients = new ArrayCollection();
-//
-//        $this->collabs = new ArrayCollection();
-//
-//        $this->etats = new ArrayCollection();
-//    }
+    /**
+     * Get dateUpdate
+     *
+     * @return \DateTime
+     */
+    public function getDateUpdate()
+    {
+        return $this->dateUpdate;
+    }
+
+
+    /**
+     * Set clients
+     *
+     * @param \ClientBundle\Entity\Client $client
+     *
+     * @return Projet
+     */
+    public function setClient(\ClientBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \ClientBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+
+
+
+
 }

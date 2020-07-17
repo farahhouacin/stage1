@@ -23,6 +23,7 @@ class DefaultController extends Controller
         $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
         return $this->render('indexprojet.html.twig', [
             'projets' => $projets
+
         ]);
     }
     /**
@@ -35,9 +36,6 @@ class DefaultController extends Controller
 
         if ($request->isMethod('POST') && $projetForm->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
-            $projet->setDate(new \DateTime('now'));
-
             $em->persist($projet);
             $em->flush();
             return $this->redirectToRoute('index-projet');
@@ -48,6 +46,7 @@ class DefaultController extends Controller
 
         ]);
     }
+
     /**
      * @Route("/edit/{id}", name="edit-projet")
      */
@@ -58,6 +57,7 @@ class DefaultController extends Controller
         $projetForm = $this->createForm(ProjetType::class, $projet);
 
         if ($request->isMethod('POST') && $projetForm->handleRequest($request)->isValid()) {
+            $projet->setDateUpdate(new \DateTime());
             $em->flush();
             return $this->redirectToRoute('index-projet');
         }

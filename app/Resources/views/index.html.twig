@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Tableau de bord</h4> </div>
+                    <h4 class="page-title">Tableau de bord</h4></div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <ol class="breadcrumb">
 
@@ -21,13 +21,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="white-box">
                         <div class="col-in row">
-                            <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="linea-icon linea-basic"></i>
-                                <h5><a href="{{ asset("client") }}" class="text-muted vb">CLIENTS</a></h5> </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><i data-icon="E" class="linea-icon linea-basic"></i>
+                                <h5><a href="{{ asset("client") }}" class="text-muted vb">CLIENTS</a></h5></div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <h3 class="counter text-right m-t-15 text-danger">7</h3> </div>
+                                <h3 class="counter text-right m-t-15 text-danger">7</h3></div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -38,13 +40,16 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="white-box">
                         <div class="col-in row">
-                            <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe01b;"></i>
-                                <h5><a href="{{ asset("projet") }}" class="text-muted vb">PROJET</a></h5> </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><i class="linea-icon linea-basic"
+                                                                       data-icon="&#xe01b;"></i>
+                                <h5><a href="{{ asset("projet") }}" class="text-muted vb">PROJET</a></h5></div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <h3 class="counter text-right m-t-15 text-megna">8</h3> </div>
+                                <h3 class="counter text-right m-t-15 text-megna">8</h3></div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-megna" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                    <div class="progress-bar progress-bar-megna" role="progressbar" aria-valuenow="40"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -55,13 +60,16 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="white-box">
                         <div class="col-in row">
-                            <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
-                                <h5><a href="{{ asset("collab") }}" class="text-muted vb">COLLABORATEUR</a></h5> </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><i class="linea-icon linea-basic"
+                                                                       data-icon="&#xe00b;"></i>
+                                <h5><a href="{{ asset("collab") }}" class="text-muted vb">COLLABORATEUR</a></h5></div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                <h3 class="counter text-right m-t-15 text-primary">12</h3> </div>
+                                <h3 class="counter text-right m-t-15 text-primary">12</h3></div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -85,16 +93,22 @@
                                     <td>Date butoir</td>
                                 </tr>
                                 </thead>
-                                <tr>
-                                    {% for client in clients %}
-                                        <td><a href="{{ path ('details-client',{id:client.id}) }}">{{ client.nameClient }}</a></td>
+                                {% for client in clients %}
+{#                                    {{ dump(client) }}#}
+                                    <tr>
+
+                                        <td>
+                                            <a href="{{ path ('details-client',{id:client.id}) }}">{{ client.nameClient }}</a>
+                                        </td>
                                         <td>{{ client.firstnameClient }}</td>
-                                    {% endfor %}
-                                    {% for projet in projets %}
-                                        <td> <a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a></td>
-                                        <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
-                                    {% endfor %}
-                                </tr>
+                                        {% for projet in client.projets %}
+                                            <td>
+                                                <a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a>
+                                            </td>
+                                            <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
                             </table>
                         </div>
                     </div>
@@ -120,7 +134,9 @@
                                 <td>
                                     {% for projet in projets %}
                                         <tr>
-                                            <td><a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a></td>
+                                            <td>
+                                                <a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a>
+                                            </td>
                                             <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
                                             <td>{{ projet.dateFin|date('d/m/Y') }}</td>
                                         </tr>
@@ -135,33 +151,34 @@
             <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
-        <footer class="footer text-center"> Luuug </footer>
+        <footer class="footer text-center"> Luuug</footer>
     </div>
     <!-- /#page-wrapper -->
-</div>
-<!-- /#wrapper -->
-<!-- jQuery -->
-<script src="{{ asset("plugins/bower_components/jquery/dist/jquery.min.js")}}"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="{{ asset("bootstrap/dist/js/bootstrap.min.js")}}"></script>
-<!-- Menu Plugin JavaScript -->
-<script src="{{ asset("plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js")}}"></script>
-<!--slimscroll JavaScript -->
-<script src="{{ asset("js/jquery.slimscroll.js")}}"></script>
-<!--Wave Effects -->
-<script src="{{ asset("js/waves.js")}}"></script>
-<!--Counter js -->
-<script src="{{ asset("plugins/bower_components/waypoints/lib/jquery.waypoints.js")}}"></script>
-<script src="{{ asset("plugins/bower_components/counterup/jquery.counterup.min.js")}}"></script>
-<!--Morris JavaScript -->
-<script src="{{ asset("plugins/bower_components/raphael/raphael-min.js")}}"></script>
-<script src="{{ asset("plugins/bower_components/morrisjs/morris.js")}}"></script>
-<!-- Custom Theme JavaScript -->
-<script src="{{ asset("js/custom.min.js")}}"></script>
-<script src="{{ asset("js/dashboard1.js")}}"></script>
-<script type="text/javascript">
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="{{ asset("plugins/bower_components/jquery/dist/jquery.min.js") }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset("bootstrap/dist/js/bootstrap.min.js") }}"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="{{ asset("plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js") }}"></script>
+    <!--slimscroll JavaScript -->
+    <script src="{{ asset("js/jquery.slimscroll.js") }}"></script>
+    <!--Wave Effects -->
+    <script src="{{ asset("js/waves.js") }}"></script>
+    <!--Counter js -->
+    <script src="{{ asset("plugins/bower_components/waypoints/lib/jquery.waypoints.js") }}"></script>
+    <script src="{{ asset("plugins/bower_components/counterup/jquery.counterup.min.js") }}"></script>
+    <!--Morris JavaScript -->
+    <script src="{{ asset("plugins/bower_components/raphael/raphael-min.js") }}"></script>
+    <script src="{{ asset("plugins/bower_components/morrisjs/morris.js") }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ asset("js/custom.min.js") }}"></script>
+    <script src="{{ asset("js/dashboard1.js") }}"></script>
+    <script type="text/javascript">
 
-    });
-</script>
+        })
+        ;
+    </script>
 
 {% endblock %}

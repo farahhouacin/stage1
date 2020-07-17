@@ -36,10 +36,12 @@ class ClientType extends AbstractType
                 ]] )
             ->add('emailClient', EmailType::class, [
             'label' => 'Email du Client'])
-//            ->add('roles', EntityType::class, [
-//                'class' => 'CollaborateurBundle:Role',
-//                'choice_label' => 'nom_role',
-//            ])
+            ->add('roles', EntityType::class, [
+                'class' => 'CollaborateurBundle:Role',
+                'choice_label' => 'nom_role',
+                'multiple' => true,
+//                'mapped' => false
+            ])
             ->add('save', SubmitType::class,  [
                 'label' => 'Enregistrer',
                 'attr' => [

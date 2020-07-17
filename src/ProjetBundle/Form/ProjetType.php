@@ -28,11 +28,8 @@ class ProjetType extends AbstractType
                 ]
             ])
             ->add('description', TextType::class)
-            ->add('dateDebut', DateType::class,[
-                'widget' => 'choice'
-            ])
             ->add('dateFin', DateType::class,[
-                'widget' => 'text'
+                'widget' => 'choice'
             ])
             ->add('dateButoir', DateType::class,[
                 'widget' => 'choice'
@@ -41,18 +38,10 @@ class ProjetType extends AbstractType
             ->add('hebergement', TextType::class)
             ->add('preprod', TextType::class)
             ->add('url', UrlType::class)
-//            ->add('clients', EntityType::class, [
-//                'class' => 'ClientBundle:Client',
-//                'choice_label' => 'name_client'
-//            ])
-//            ->add('collabs', EntityType::class, [
-//                'class' => 'CollaborateurBundle:Collab',
-//                'choice_label' => 'name_collab'
-//            ])
-//            ->add('etat', EntityType::class, [
-//                'class' => 'ProjetBundle:Etat',
-//                'choice_label' => 'nom_etat',
-//            ])
+            ->add('client', EntityType::class, [
+                'class' => 'ClientBundle:Client',
+                'choice_label' => 'name_client',
+            ])
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer',
                 'attr' => [

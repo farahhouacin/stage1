@@ -14,15 +14,10 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Role
 {
-//    /**
-//     * @ManyToMany(targetEntity="ClientBundle\Entity\Client", mappedBy="roles")
-//     */
-//    private $clients;
-//
-//    /**
-//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="roles")
-//     */
-//    private $collabs;
+    /**
+     * @ManyToMany(targetEntity="ClientBundle\Entity\Client", mappedBy="roles")
+     */
+    private $clients;
 
 
     /**
@@ -77,11 +72,9 @@ class Role
     }
 
 
-//    public function __construct()
-//    {
-//        $this->clients = new ArrayCollection();
-//
-//        $this->collabs = new ArrayCollection();
-//    }
+    public function __construct()
+    {
+        $this->clients = new ArrayCollection();
+    }
 
 }
