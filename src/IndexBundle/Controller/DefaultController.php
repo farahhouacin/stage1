@@ -29,6 +29,7 @@ class DefaultController extends Controller
     public function indexCollab()
     {
         $settings = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->findAll();
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('settings.html.twig', [
             'settings' => $settings
         ]);
@@ -87,6 +88,30 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/user/test",name="usertest")
+     */
+    public function usertest()
+    {
+        $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
+        $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
+        return $this->render('index.html.twig',[
+        'clients' => $clients,
+        'projets' => $projets,
+        ]);
+    }
 
+    /**
+     * @Route("/admin/test",name="amdintest")
+     */
+    public function admintest()
+    {
+        $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
+        $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
+        return $this->render('index.html.twig',[
+            'clients' => $clients,
+            'projets' => $projets,
+        ]);
+    }
 
 }
