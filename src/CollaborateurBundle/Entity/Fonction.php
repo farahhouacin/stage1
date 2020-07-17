@@ -71,7 +71,40 @@ class Fonction
         return $this->nomFonction;
     }
 
-//
+
+    /**
+     * Add collab
+     *
+     * @param \CollaborateurBundle\Entity\Collab $collab
+     *
+     * @return Fonction
+     */
+    public function addCollab(\CollaborateurBundle\Entity\Collab $collab)
+    {
+        $this->collabs[] = $collab;
+
+        return $this;
+    }
+
+    /**
+     * Remove collab
+     *
+     * @param \CollaborateurBundle\Entity\Collab $collab
+     */
+    public function removeCollab(\CollaborateurBundle\Entity\Collab $collab)
+    {
+        $this->collabs->removeElement($collab);
+    }
+
+    /**
+     * Get collabs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCollabs()
+    {
+        return $this->collabs;
+    }
 //    public function __construct()
 //    {
 //        $this->collabs = new ArrayCollection();
