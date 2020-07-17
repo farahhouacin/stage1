@@ -14,12 +14,17 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Projet
 {
-//
+
 //    /**
-//     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projet")
+//     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projets")
 //     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
 //     */
 //    private $clients;
+//    /**
+//     * @ORM\ManyToOne(targetEntity="EtatBundle\Entity\Etat", inversedBy="projets")
+//     * @ORM\JoinColumn(name="etat_date", referencedColumnName="id")
+//     */
+//    private $etats;
 //
 //    /**
 //     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="projets")
@@ -339,7 +344,7 @@ class Projet
 
   //      return $this;
 //    }
-
+//
 //    /**
 //    //     * Constructor
 //    //     */
@@ -348,5 +353,7 @@ class Projet
 //        $this->clients = new ArrayCollection();
 //
 //        $this->collabs = new ArrayCollection();
+//
+//        $this->etats = new ArrayCollection();
 //    }
 }

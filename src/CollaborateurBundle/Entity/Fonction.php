@@ -15,14 +15,10 @@ use Doctrine\ORM\Mapping\ManyToMany;
 class Fonction
 {
 //    /**
-//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="roles")
+//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="fonctions")
 //     */
 //    private $collabs;
-//
-//    /**
-//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Fonction", mappedBy="")
-//     */
-//    private $fonctions
+
 
     /**
      * @var int
@@ -75,9 +71,7 @@ class Fonction
         return $this->nomFonction;
     }
 
-
-
-
+//
 //    public function __construct()
 //    {
 //        $this->collabs = new ArrayCollection();

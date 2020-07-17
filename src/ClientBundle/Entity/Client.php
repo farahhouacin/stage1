@@ -15,15 +15,15 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Client
 {
-//    /**
-//     * @ORM\OneToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="client")
-//     */
-//    private $projets;
-//    /**
-//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="clients")
-//     * @JoinTable(name="clients_roles")
-//     */
-//    private $roles;
+    /**
+     * @ORM\OneToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="client")
+     */
+    private $projets;
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="clients")
+     * @JoinTable(name="clients_roles")
+     */
+    private $roles;
 
 
 
@@ -173,19 +173,6 @@ class Client
     }
 
 
-//
-//    public function __construct()
-//    {
-//        $this->projets = new ArrayCollection();
-//
-//        $this->roles = new ArrayCollection();
-//    }
-
-
-// src/OC/PlatformBundle/Entity/AdvertRepository.php
-
-
-
     public function myFindAll()
     {
 
@@ -204,6 +191,17 @@ class Client
         // On retourne ces résultats
         return $results;
     }
+
+
+    public function __construct()
+    {
+        $this->projets = new ArrayCollection();
+
+        $this->roles = new ArrayCollection();
+    }
+
+
+// src/OC/PlatformBundle/Entity/AdvertRepository.php
 
 
 }

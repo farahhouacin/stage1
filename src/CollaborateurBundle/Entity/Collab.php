@@ -211,15 +211,13 @@ class Collab
 
     }
 
-
-    //    public function __construct()
+//        public function __construct()
 //    {
-//        $this->fonctions = new ArrayCollection();
-//
 //        $this->roles = new ArrayCollection();
 //
-//
 //        $this->projets = new ArrayCollection();
+//
+//        $this->fonctions = new ArrayCollection();
 //
 //    }
 }

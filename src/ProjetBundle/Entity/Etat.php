@@ -2,7 +2,9 @@
 
 namespace ProjetBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
 
 /**
  * Etat
@@ -12,6 +14,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Etat
 {
+
+//    /**
+//     * @ManyToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="etats")
+//     */
+//    private $projets;
+
     /**
      * @var int
      *
@@ -61,6 +69,14 @@ class Etat
     {
         return $this->nameEtat;
     }
+
+//    /**
+//    //     * Constructor
+//    //     */
+//    public function __construct()
+//    {
+//        $this->projets = new ArrayCollection();
+//    }
 
 
 }

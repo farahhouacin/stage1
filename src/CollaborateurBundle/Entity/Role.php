@@ -76,12 +76,11 @@ class Role
         return $this->nomRole;
     }
 
-
-
-
 //
-//    public function __construct() {
+//    public function __construct()
+//    {
 //        $this->clients = new ArrayCollection();
+//
 //        $this->collabs = new ArrayCollection();
 //    }
 
