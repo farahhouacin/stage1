@@ -1,0 +1,22 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ asset("login.css")}}">
+    <script type="text/javascript" src="js.js"></script>
+</head>
+<body>
+{% block body %}
+    <div class="body"></div>
+    <div class="grad"></div>
+    <div class="header">
+        <div><h1>Luuu<span>g</span></h1></div>
+    </div>
+    <br>
+    <div class="login">
+        <input type="text" placeholder="username" name="user"><br>
+        <input type="password" placeholder="password" name="password"><br>
+        <input type="button" value="Login">
+    </div>
+{% endblock %}
+{% block fos_user_content %} {% endblock %}
+</body>
+</html>

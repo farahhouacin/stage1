@@ -29,7 +29,7 @@ class DefaultController extends Controller
     public function indexCollab()
     {
         $settings = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->findAll();
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        //$this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('settings.html.twig', [
             'settings' => $settings
         ]);
