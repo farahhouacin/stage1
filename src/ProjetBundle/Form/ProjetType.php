@@ -41,7 +41,7 @@ class ProjetType extends AbstractType
             ->add('client', EntityType::class, [
                 'class' => 'ClientBundle:Client',
                 'choice_label' => 'name_client',
-                'multiple' => true
+                'multiple' => false
             ])
             ->add('collabs', EntityType::class, [
                 'class' => 'CollaborateurBundle:Collab',

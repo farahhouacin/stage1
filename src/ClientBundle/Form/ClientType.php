@@ -40,7 +40,7 @@ class ClientType extends AbstractType
                 'class' => 'CollaborateurBundle:Role',
                 'choice_label' => 'nom_role',
                 'multiple' => true,
-//                'mapped' => false
+
             ])
             ->add('save', SubmitType::class,  [
                 'label' => 'Enregistrer',

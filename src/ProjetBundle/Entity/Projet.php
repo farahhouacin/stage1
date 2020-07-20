@@ -17,7 +17,7 @@ class Projet
     /**
      * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Client", inversedBy="projets")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
-     */
+*/
     private $client;
 
     /**
@@ -111,6 +111,7 @@ class Projet
         $this->dateUpdate = new \DateTime();
 
         $this->collabs = new ArrayCollection();
+
     }
 
 

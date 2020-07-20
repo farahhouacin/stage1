@@ -48,7 +48,7 @@ class CollabType extends AbstractType
             ->add('fonctions', EntityType::class, [
                 'class' => 'CollaborateurBundle:Fonction',
                 'choice_label' => 'nom_fonction',
-                'multiple' => true
+                'multiple' => true,
             ])
             ->add('save', SubmitType::class,  [
             'label' => 'Enregistrer',
