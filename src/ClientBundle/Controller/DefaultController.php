@@ -39,12 +39,37 @@ class DefaultController extends Controller
             $em->persist($client);
             $em->flush();
             return $this->redirectToRoute('index-client');
+
         }
 
         return $this->render('newclient.html.twig', [
             'form' => $clientForm->createView()
         ]);
     }
+
+//    public function sendEmailAction($name, \Swift_Mailer $mailer)
+//    {
+//        $message = (new \Swift_Message('Confirmation de création de compte'))
+//            ->setFrom('testsymfony@gmail.com')
+//            ->setTo('')
+//            ->setBody(
+//                $this->renderView(
+//                // app/Resources/views/Emails/registration.html.twig
+//                    'registration.html.twig',
+//                    array('name_client' => $name)
+//                ),
+//                'text/html'
+//            )
+//            ->addPart(
+//                $this->renderView(
+//                    'Emails/registration.txt.twig',
+//                    array('name_client' => $name)
+//                ),
+//                'text/plain'
+//            );
+//
+//            $mailer->send($message);
+//    }
 
     /**
      * @Route("/edit/{id}", name="edit-client")
