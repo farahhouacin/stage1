@@ -15,24 +15,24 @@ use Doctrine\ORM\Mapping\ManyToMany;
  */
 class Collab
 {
-//
-//    /**
-//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="collabs")
-//     * @JoinTable(name="collabs_roles")
-//     */
-//    private $roles;
-//
-//    /**
-//     * @ManyToMany(targetEntity="ProjetBundle\Entity\Projet", inversedBy="collabs")
-//     * @JoinTable(name="projets_collabs")
-//     */
-//    private $projets;
-//
-//    /**
-//     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Fonction", inversedBy="collabs")
-//     * @JoinTable(name="collabs_fonctions")
-//     */
-//    private $fonctions;
+
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="collabs")
+     * @JoinTable(name="collabs_roles")
+     */
+    private $roles;
+
+    /**
+     * @ManyToMany(targetEntity="ProjetBundle\Entity\Projet", inversedBy="collabs")
+     * @JoinTable(name="projets_collabs")
+     */
+    private $projets;
+
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Fonction", inversedBy="collabs")
+     * @JoinTable(name="collabs_fonctions")
+     */
+    private $fonctions;
 
     /**
      * @var int
@@ -211,13 +211,118 @@ class Collab
 
     }
 
-//        public function __construct()
-//    {
-//        $this->roles = new ArrayCollection();
-//
-//        $this->projets = new ArrayCollection();
-//
-//        $this->fonctions = new ArrayCollection();
-//
-//    }
+        public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+
+        $this->projets = new ArrayCollection();
+
+        $this->fonctions = new ArrayCollection();
+
+    }
+
+
+    /**
+     * Add projet
+     *
+     * @param \ProjetBundle\Entity\Projet $projet
+     *
+     * @return Collab
+     */
+    public function addProjet(\ProjetBundle\Entity\Projet $projet)
+    {
+        $this->projets[] = $projet;
+
+        return $this;
+    }
+
+    /**
+     * Remove projet
+     *
+     * @param \ProjetBundle\Entity\Projet $projet
+     */
+    public function removeProjet(\ProjetBundle\Entity\Projet $projet)
+    {
+        $this->projets->removeElement($projet);
+    }
+
+    /**
+     * Get projets
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProjets()
+    {
+        return $this->projets;
+    }
+
+
+
+    /**
+     * Add role
+     *
+     * @param \CollaborateurBundle\Entity\Role $role
+     *
+     * @return Collab
+     */
+    public function addRole(\CollaborateurBundle\Entity\Role $role)
+    {
+        $this->roles[] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Remove role
+     *
+     * @param \CollaborateurBundle\Entity\Role $role
+     */
+    public function removeRole(\CollaborateurBundle\Entity\Role $role)
+    {
+        $this->roles->removeElement($role);
+    }
+
+    /**
+     * Get roles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * Add fonction
+     *
+     * @param \CollaborateurBundle\Entity\Fonction $fonction
+     *
+     * @return Collab
+     */
+    public function addFonction(\CollaborateurBundle\Entity\Fonction $fonction)
+    {
+        $this->fonctions[] = $fonction;
+
+        return $this;
+    }
+
+    /**
+     * Remove fonction
+     *
+     * @param \CollaborateurBundle\Entity\Fonction $fonction
+     */
+    public function removeFonction(\CollaborateurBundle\Entity\Fonction $fonction)
+    {
+        $this->fonctions->removeElement($fonction);
+    }
+
+    /**
+     * Get fonctions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFonctions()
+    {
+        return $this->fonctions;
+    }
 }

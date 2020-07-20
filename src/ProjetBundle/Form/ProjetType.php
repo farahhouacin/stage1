@@ -23,15 +23,15 @@ class ProjetType extends AbstractType
         $builder
             ->add('nameProjet', TextType::class, [
                 'label' => 'Nom du projet',
-                'constraints'=>[
+                'constraints' => [
                     new NotBlank()
                 ]
             ])
             ->add('description', TextType::class)
-            ->add('dateFin', DateType::class,[
+            ->add('dateFin', DateType::class, [
                 'widget' => 'choice'
             ])
-            ->add('dateButoir', DateType::class,[
+            ->add('dateButoir', DateType::class, [
                 'widget' => 'choice'
             ])
             ->add('fonctionnalite', TextareaType::class)
@@ -41,6 +41,12 @@ class ProjetType extends AbstractType
             ->add('client', EntityType::class, [
                 'class' => 'ClientBundle:Client',
                 'choice_label' => 'name_client',
+                'multiple' => true
+            ])
+            ->add('collabs', EntityType::class, [
+                'class' => 'CollaborateurBundle:Collab',
+                'choice_label' => 'name_collab',
+                'multiple' => true
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer',

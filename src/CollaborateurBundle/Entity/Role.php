@@ -19,6 +19,11 @@ class Role
      */
     private $clients;
 
+    /**
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="roles")
+     */
+    private $collabs;
+
 
     /**
      * @var int
@@ -75,6 +80,8 @@ class Role
     public function __construct()
     {
         $this->clients = new ArrayCollection();
+
+        $this->collabs = new ArrayCollection();
     }
 
 
@@ -110,5 +117,39 @@ class Role
     public function getClients()
     {
         return $this->clients;
+    }
+
+    /**
+     * Add collab
+     *
+     * @param \CollaborateurBundle\Entity\Collab $collab
+     *
+     * @return Role
+     */
+    public function addCollab(\CollaborateurBundle\Entity\Collab $collab)
+    {
+        $this->collabs[] = $collab;
+
+        return $this;
+    }
+
+    /**
+     * Remove collab
+     *
+     * @param \CollaborateurBundle\Entity\Collab $collab
+     */
+    public function removeCollab(\CollaborateurBundle\Entity\Collab $collab)
+    {
+        $this->collabs->removeElement($collab);
+    }
+
+    /**
+     * Get collabs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCollabs()
+    {
+        return $this->collabs;
     }
 }
