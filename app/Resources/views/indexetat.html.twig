@@ -32,8 +32,26 @@
                                     <td>{{ etat.nameEtat }}</td>
                                     <td>
                                         <a href={{ path('edit-etat', {id:etat.id}) }}><i class="fa fa-edit"></i></a>
-                                        <a href={{ path('delete-etat', {id:etat.id}) }}><i class="fa fa-trash"></i></a>
-                                        {#<a href="{{ path('details-client', {id:client.id}) }}"> Détails</a>#}
+{#                                        <a href={{ path('delete-etat', {id:etat.id}) }}><i class="fa fa-trash"></i></a>#}
+
+
+                                        <button onclick="document.getElementById('id:etat.id').style.display='block'"> <i class="fa fa-trash-alt"></i> </button>
+
+                                        <div id="id:etat.id" class="modal">
+                                            <span onclick="document.getElementById('id:etat.id').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            <form class="modal-content">
+                                                <div class="container">
+                                                    <h1>Confirmation de la suppression</h1>
+                                                    <p>Etes-vous sûr de vouloir supprimer ?</p>
+
+                                                    <div>
+                                                        <button type="button">    <a href="{{ path('index-etat') }}"> Annuler  </a> </button>
+                                                        <button type="button"> <a href={{ path('delete-etat', {id:etat.id}) }}> Oui, supprimer  </a> </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
                                     </td>
                                 <tr>
                                     {% endfor %}
