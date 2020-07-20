@@ -10,7 +10,7 @@ namespace ClientBundle\Repository;
  */
 class ClientRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getNb()
+    public function getNbClient()
     {
         return $this->createQueryBuilder('client')
         ->select('COUNT(client.id)')

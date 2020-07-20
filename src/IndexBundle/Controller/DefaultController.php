@@ -15,10 +15,16 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
+        $nbclients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->getNbClient();
         $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
+        $nbprojets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->getNbProjet();
+        $nbcollabs = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->getNbCollab();
         return $this->render('index.html.twig', [
             'projets' => $projets,
-            "clients"=> $clients
+            "clients"=> $clients,
+            'nbclients'=>$nbclients,
+            "nbprojets"=>$nbprojets,
+            "nbcollabs"=>$nbcollabs
         ]);
 
     }
@@ -29,9 +35,15 @@ class DefaultController extends Controller
     public function indexCollab()
     {
         $settings = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->findAll();
+        $nbetat = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Etat')->getNb();
+        $nbrole = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Role')->getNb();
+        $nbfonc = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Fonction')->getNb();
         //$this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('settings.html.twig', [
-            'settings' => $settings
+            'settings' => $settings,
+            "nbetat"=> $nbetat,
+            "nbrole"=>$nbrole,
+            "nbfonc"=>$nbfonc
         ]);
     }
 
@@ -62,8 +74,14 @@ class DefaultController extends Controller
      */
     public function archive()
     {
-       // $archive = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
-        return $this->render('archive.html.twig');
+        $nbclients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->getNbClient();
+        $nbprojets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->getNbProjet();
+        $nbcollabs = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->getNbCollab();
+        return $this->render('archive.html.twig', [
+            'nbclients'=>$nbclients,
+            "nbprojets"=>$nbprojets,
+            "nbcollabs"=>$nbcollabs
+        ]);
     }
 
     /**
@@ -113,5 +131,7 @@ class DefaultController extends Controller
             'projets' => $projets,
         ]);
     }
+
+
 
 }

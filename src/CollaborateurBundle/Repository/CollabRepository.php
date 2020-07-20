@@ -10,4 +10,11 @@ namespace CollaborateurBundle\Repository;
  */
 class CollabRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getNbCollab()
+    {
+        return $this->createQueryBuilder('collab')
+            ->select('COUNT(collab.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

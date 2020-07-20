@@ -10,4 +10,11 @@ namespace CollaborateurBundle\Repository;
  */
 class RoleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getNb()
+    {
+        return $this->createQueryBuilder('role')
+            ->select('COUNT(role.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

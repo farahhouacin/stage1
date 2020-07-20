@@ -10,4 +10,11 @@ namespace ProjetBundle\Repository;
  */
 class ProjetRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getNbProjet()
+    {
+        return $this->createQueryBuilder('projet')
+            ->select('COUNT(projet.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

@@ -10,4 +10,11 @@ namespace ProjetBundle\Repository;
  */
 class EtatRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getNb()
+    {
+        return $this->createQueryBuilder('etat')
+            ->select('COUNT(etat.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }
