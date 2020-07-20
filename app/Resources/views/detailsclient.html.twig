@@ -24,18 +24,14 @@
                                     <td>{{ client.firstnameClient }}</td>
                                     <td>{{ client.telClient }}</td>
                                     <td>{{ client.emailClient }}</td>
-
-
-
                                 </tr>
                                 <br><br>
 
-
                             </table>
 
-                            <a href="{{ path('edit-client', {id:client.id}) }}"> Modifier</a>
+                            <a href="{{ path('edit-client', {id:client.id}) }}"><i class="fa fa-edit"></i></a>
 
-                            <a href="{{ path('delete-client', {id:client.id}) }}"> Supprimer</a>
+                            <a href="{{ path('delete-client', {id:client.id}) }}"><i class="fa fa-trash-alt"></i></a>
 
                             <a href="{{ path('index-client') }}">Retour</a>
 
