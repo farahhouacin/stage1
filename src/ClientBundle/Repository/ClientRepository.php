@@ -10,11 +10,12 @@ namespace ClientBundle\Repository;
  */
 class ClientRepository extends \Doctrine\ORM\EntityRepository
 {
- // public fonction getnb () {
+    //public fonction getNb()
+    //{
 
- //       return $this-> createQueryBuilder('client')
-//        ->select('COUNT(client)')
- //       ->getQuery()
-  //      ->getSingleSalarResult();
-  //  }
+    //    return $this->createQueryBuilder('client')
+     //   ->select('COUNT(client.id)')
+     //   ->getQuery()
+     //   ->getSingleScalarResult();
+    //}
 }
