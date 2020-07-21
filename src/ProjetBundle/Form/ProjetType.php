@@ -48,6 +48,11 @@ class ProjetType extends AbstractType
                 'choice_label' => 'name_collab',
                 'multiple' => true
             ])
+            ->add('etats', EntityType::class, [
+                'class' => 'ProjetBundle:Etat',
+                'choice_label' => 'name_etat',
+                'multiple' => false
+            ])
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer',
                 'attr' => [

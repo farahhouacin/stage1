@@ -433,28 +433,4 @@ class Projet
     {
         return $this->collabs;
     }
-
-    /**
-     * Set etats
-     *
-     * @param \ProjetBundle\Entity\Etat $etats
-     *
-     * @return Projet
-     */
-    public function setEtats(\ProjetBundle\Entity\Etat $etats = null)
-    {
-        $this->etats = $etats;
-
-        return $this;
-    }
-
-    /**
-     * Get etats
-     *
-     * @return \ProjetBundle\Entity\Etat
-     */
-    public function getEtats()
-    {
-        return $this->etats;
-    }
 }
