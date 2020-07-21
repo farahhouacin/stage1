@@ -40,10 +40,10 @@
 {#                                <a href={{ path('delete-client', {id:client.id}) }}>  <i class="fa fa-trash-alt"></i>  </a>#}
 
 
-                                <button onclick="document.getElementById('id:client.id').style.display='block'"> <i class="fa fa-trash-alt"></i> </button>
-
-                                <div id="id:client.id" class="modal">
-                                    <span onclick="document.getElementById('id:client.id').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <button onclick="document.getElementById('idclient.id').style.display='block'"> <i class="fa fa-trash-alt"></i> </button>
+{#                                {{ dump (client.id) }}#}
+                                <div id="idclient.id" class="modal">
+                                    <span onclick="document.getElementById('idclient.id').style.display='none'" class="close" title="Close Modal">&times;</span>
                                     <form class="modal-content">
                                         <div class="container">
                                             <h1>Confirmation de la suppression</h1>
@@ -51,7 +51,8 @@
 
                                             <div>
                                                 <button type="button">    <a href="{{ path('index-client') }}"> Annuler  </a> </button>
-                                                <button type="button"> <a href={{ path('delete-client', {id:client.id}) }}> Oui, supprimer  </a> </button>
+                                                <button type="button"> <a href={{ path('delete-client', {id:client.id}) }}> Oui, supprimer {# {{ dump (client.id) }} #}</a> </button>
+
                                             </div>
                                         </div>
                                     </form>
