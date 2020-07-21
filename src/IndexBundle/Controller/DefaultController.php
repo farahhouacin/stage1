@@ -113,7 +113,8 @@ class DefaultController extends Controller
     {
         $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
         $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
-        return $this->render('index.html.twig',[
+        $this->denyAccessUnlessGranted('ROLE_USER');
+        return $this->render('user.html.twig',[
         'clients' => $clients,
         'projets' => $projets,
         ]);
@@ -126,11 +127,14 @@ class DefaultController extends Controller
     {
         $clients = $this->getDoctrine()->getManager()->getRepository('ClientBundle:Client')->findAll();
         $projets = $this->getDoctrine()->getManager()->getRepository('ProjetBundle:Projet')->findAll();
-        return $this->render('index.html.twig',[
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        return $this->render('admin.html.twig',[
             'clients' => $clients,
             'projets' => $projets,
         ]);
     }
+
+
 
 
 
