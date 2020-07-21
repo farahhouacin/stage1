@@ -93,12 +93,11 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $collab = $em->getRepository('CollaborateurBundle:Collab')->find($id);
-        $collabs = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->findAll();
         $collabForm = $this->createForm(CollabType::class, $collab);
 
         return $this->render('detailscollab.html.twig', [
             'form' => $collabForm->createView(),
-            'collabs' => $collabs
+            'collab' => $collab
         ]);
     }
 
