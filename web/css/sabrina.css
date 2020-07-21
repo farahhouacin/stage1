@@ -33,6 +33,40 @@
   color: white;
 }
 
+.farah {
+  background-color: green;
+  border: black;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
+.farah:hover {
+  background-color: seagreen;
+  color: white;
+}
+
+.boutonf {
+  background-color: dodgerblue;
+  border: black;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
+.bouton:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
 .fenetre {
 resizable: false;
 height: "auto";
@@ -52,5 +86,34 @@ modal: true;
   }
 }
 
-
+.boutonmenuprincipal {
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding:20px;
+  margin-top:20px;
+  font-size: 30px;
+}
+.boutonmenuprincipal:hover {
+  background-color: cornflowerblue;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-child {
+  display: none;
+  background-color: powderblue;
+  min-width: 50px;
+}
+.dropdown-child a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-child {
+  display: block;
+}
 

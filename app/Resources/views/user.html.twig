@@ -1,1 +1,44 @@
-<h1>Salut ! Si tu es ici c'est que tu es un user !</h1>
+<html>
+<style>
+.boutonmenuprincipal {
+background-color: cornflowerblue;
+color: white;
+border: none;
+cursor: pointer;
+padding:20px;
+margin-top:20px;
+font-size: 30px;
+}
+.boutonmenuprincipal:hover {
+background-color: cornflowerblue;
+}
+.dropdown {
+position: relative;
+display: inline-block;
+}
+.dropdown-child {
+display: none;
+background-color: powderblue;
+min-width: 50px;
+}
+.dropdown-child a {
+color: white;
+padding: 20px;
+text-decoration: none;
+display: block;
+}
+.dropdown:hover .dropdown-child {
+display: block;
+}
+</style>
+<head>
+</head>
+<body>
+<div class="dropdown">
+    <button class="boutonmenuprincipal">Menu principal</button>
+    <div class="dropdown-child">
+        <a href="http://www.votresite.com/page1.html">Menu enfant 1</a>
+    </div>
+</div>
+</body>
+</html>

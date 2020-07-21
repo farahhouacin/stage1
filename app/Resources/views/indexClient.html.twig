@@ -36,11 +36,11 @@
                             <td>{{ client.telClient }}</td>
                             <td>{{ client.emailClient }}</td>
                             <td>
-                                <a href={{ path('edit-client', {id:client.id}) }}><i class="fa fa-edit"></i></a>
+                                <a href={{ path('edit-client', {id:client.id}) }}><i class="fa fa-edit" style="color:orange"></i></a>
 {#                                <a href={{ path('delete-client', {id:client.id}) }}>  <i class="fa fa-trash-alt"></i>  </a>#}
 
 
-                                <button onclick="document.getElementById('idclient.id').style.display='block'"> <i class="fa fa-trash-alt"></i> </button>
+                                <button onclick="document.getElementById('idclient.id').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
 {#                                {{ dump (client.id) }}#}
                                 <div id="idclient.id" class="modal">
                                     <span onclick="document.getElementById('idclient.id').style.display='none'" class="close" title="Close Modal">&times;</span>
