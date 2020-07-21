@@ -31,10 +31,10 @@
                                 <tr>
                                     <td>{{ fonction.nomFonction }}</td>
                                     <td>
-                                        <a href={{ path('edit-fonction', {id:fonction.id}) }}><i class="fa fa-edit"></i></a>
+                                        <a href={{ path('edit-fonction', {id:fonction.id}) }}><i class="fa fa-edit" style="color:orange"></i></a>
 {#                                        <a href={{ path('delete-fonction', {id:fonction.id}) }}><i class="fa fa-trash"></i></a>#}
 
-                                        <button onclick="document.getElementById('id:fonction.id').style.display='block'"> <i class="fa fa-trash-alt"></i> </button>
+                                        <button onclick="document.getElementById('id:fonction.id').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
 
                                         <div id="id:fonction.id" class="modal">
                                             <span onclick="document.getElementById('id:fonction.id').style.display='none'" class="close" title="Close Modal">&times;</span>

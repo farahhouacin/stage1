@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+<<<<<<< HEAD
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row bg-title">
@@ -50,6 +51,61 @@
                                                     </div>
                                                 </div>
                                             </form>
+=======
+<div id="page-wrapper">
+    <div class="container-fluid">
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h4 class="page-title">Clients</h4> </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <a href="{{ path("new-client") }}">Nouveau Client</a>
+            </ol>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title"></h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>Nom </td>
+                            <td>Prénom </td>
+                            <td>Téléphone </td>
+                            <td>Email </td>
+                            <td>Action</td>
+                        </tr>
+                        </thead>
+
+                        {% for client in clients %}
+                            <tr>
+                            <td><a href="{{ path ('details-client',{id:client.id}) }}">{{ client.nameClient }}</a></td>
+                            <td>{{ client.firstnameClient }}</td>
+                            <td>{{ client.telClient }}</td>
+                            <td>{{ client.emailClient }}</td>
+                            <td>
+                                <a href={{ path('edit-client', {id:client.id}) }}><i class="fa fa-edit" style="color:orange"></i></a>
+{#                                <a href={{ path('delete-client', {id:client.id}) }}>  <i class="fa fa-trash-alt"></i>  </a>#}
+
+
+                                <button onclick="document.getElementById('idclient.id').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
+{#                                {{ dump (client.id) }}#}
+                                <div id="idclient.id" class="modal">
+                                    <span onclick="document.getElementById('idclient.id').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <form class="modal-content">
+                                        <div class="container">
+                                            <h1>Confirmation de la suppression</h1>
+                                            <p>Etes-vous sûr de vouloir supprimer ?</p>
+
+                                            <div>
+                                                <button type="button">    <a href="{{ path('index-client') }}"> Annuler  </a> </button>
+                                                <button type="button"> <a href={{ path('delete-client', {id:client.id}) }}> Oui, supprimer {# {{ dump (client.id) }} #}</a> </button>
+
+                                            </div>
+>>>>>>> da1538e0a8ba37b18275e8513bdfd147d245e374
                                         </div>
                                     </td>
                                 <tr>

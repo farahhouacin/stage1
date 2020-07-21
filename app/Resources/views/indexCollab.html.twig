@@ -8,9 +8,9 @@
             <h4 class="page-title">Collaborateurs</h4>
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-            <ol class="breadcrumb">
-                <a href="{{ path("new-collab") }}">Nouveau Collaborateur</a>
-            </ol>
+             <ol class="breadcrumb">
+                <a href="{{ path("new-collab") }}" class="farah">Nouveau Collaborateur</a>
+             </ol>
         </div>
     </div>
     <div class="row">
@@ -34,11 +34,11 @@
                                 <td>{{ collab.firstnameCollab }}</td>
                                 <td>{{ collab.emailCollab }}</td>
                                 <td>
-                                    <a href={{ path('edit-collab', {id:collab.id}) }}><i class="fa fa-edit"></i></a>
+                                    <a href={{ path('edit-collab', {id:collab.id}) }}><i class="fa fa-edit" style="color:orange"></i></a>
 {#                                    <a href={{ path('delete-collab', {id:collab.id}) }}><i class="fa fa-trash-alt"></i></a>#}
 
 
-                                    <button onclick="document.getElementById('id:collab.id').style.display='block'"> <i class="fa fa-trash-alt"></i> </button>
+                                    <button onclick="document.getElementById('id:collab.id').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
 
                                     <div id="id:collab.id" class="modal">
                                         <span onclick="document.getElementById('id:collab.id').style.display='none'" class="close" title="Close Modal">&times;</span>
