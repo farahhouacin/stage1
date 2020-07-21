@@ -2,57 +2,59 @@
 
 {% block body %}
 
-<div class="row">
-    <div class="col-sm-12">
-        <div class="white-box">
-            <h3 class="box-title">Fiche projet</h3>
-            <div class="table-responsive">
-                <table class="table ">
-                    <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Description</th>
-                        <th>Date de début</th>
-                        <th>Date de fin</th>
-                        <th>Date butoir</th>
-                        <th>Fonctionnalité</th>
-                        <th>Hébergement</th>
-                        <th>Préprod</th>
-                        <th>URL</th>
-                    </tr>
-                    </thead>
+    <div id="page-wrapper">
+        <div class="container-fluid">
 
-                    <tr>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title">Fiche projet</h3>
+                        <div class="table-responsive">
+                            <table class="table ">
+                                <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Description</th>
+                                    <th>Date de début</th>
+                                    <th>Date de fin</th>
+                                    <th>Date butoir</th>
+                                    <th>Fonctionnalité</th>
+                                    <th>Hébergement</th>
+                                    <th>Préprod</th>
+                                    <th>URL</th>
+                                </tr>
+                                </thead>
 
-                        {% for projet in projets %}
+                                <tr>
 
-                            {{ projet.id }}<br>
-                            {{ projet.nameProjet }}<br>
-                            {{ projet.description }}<br>
-                            {{ projet.dateDebut|date('d/m/Y') }}<br>
-                            {{ projet.dateFin|date('d/m/Y') }}<br>
-                            {{ projet.dateButoir|date('d/m/Y') }}<br>
-                            {{ projet.fonctionnalite }}<br>
-                            {{ projet.hebergement }}<br>
-                            {{ projet.preprod }}<br>
-                            {{ projet.url }}<br>
-                        {% endfor %}
-                    </tr>
+                                    <td>{{ projet.nameProjet }}</td>
+                                    <td>{{ projet.description }}</td>
+                                    <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
+                                    <td>{{ projet.dateFin|date('d/m/Y') }}</td>
+                                    <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
+                                    <td>{{ projet.fonctionnalite }}</td>
+                                    <td>{{ projet.hebergement }}</td>
+                                    <td>{{ projet.preprod }}</td>
+                                    <td>{{ projet.url }}</td>
 
-                </table>
-                <a href="#">Accueil</a>
+                                </tr>
+                                <br><br>
 
-                <a href="{{ path('edit-projet', {id:projet.id}) }}"> Modifier</a><br><br>
+                            </table>
 
-                <a href="{{ path('delete-projet', {id:projet.id}) }}"> Supprimer</a><br><br>
 
-                <a href="{{ path('index-projet') }}">Retour</a>
+                            <a href="{{ path('edit-projet', {id:projet.id}) }}"><i class="fa fa-edit"></i></a>
 
-                <a href="{{ path('new-projet') }}">Ajouter un projet</a><br>
+                            <a href="{{ path('delete-projet', {id:projet.id}) }}"><i class="fa fa-trash-alt"></i></a>
+
+{#                            <a href="{{ path('index-projet') }}">Retour</a>#}
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 

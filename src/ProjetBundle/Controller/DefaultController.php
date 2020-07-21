@@ -86,10 +86,10 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('ProjetBundle:Projet')->find($id);
-        $projetForm = $this->createForm(ProjetType::class, $projet);
 
         return $this->render('detailsprojet.html.twig', [
-            'form' => $projetForm->createView()
+
+            'projet' => $projet
         ]);
     }
 
