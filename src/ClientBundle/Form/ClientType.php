@@ -40,14 +40,19 @@ class ClientType extends AbstractType
                 'class' => 'CollaborateurBundle:Role',
                 'choice_label' => 'nom_role',
                 'multiple' => true,
-
             ])
             ->add('save', SubmitType::class,  [
                 'label' => 'Enregistrer',
                 'attr' => [
-                    'class' => 'bouton'
+                    'class' => 'bouton',
                 ]
             ]);
+        //->add('reset', ResetType::class,  [
+                   // 'label' => 'Annuler',
+                    //'attr' => [
+                      //  'class' => 'hari'
+                    //]
+           // ]);
     }
 
     /**
