@@ -30,26 +30,25 @@
 
                         {% for collab in collabs %}
                             <tr>
-                                <td><a href="{{ path ('details-collab',{id:collab.id}) }}">{{ collab.nameCollab }}</a></td>
+                                <td>{{ collab.nameCollab }}</td>
                                 <td>{{ collab.firstnameCollab }}</td>
                                 <td>{{ collab.emailCollab }}</td>
                                 <td>
                                     <a href={{ path('edit-collab', {id:collab.id}) }}><i class="fa fa-edit" style="color:orange"></i></a>
-{#                                    <a href={{ path('delete-collab', {id:collab.id}) }}><i class="fa fa-trash-alt"></i></a>#}
 
 
-                                    <button onclick="document.getElementById('id:collab.id').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
+                                    <button onclick="document.getElementById('{{collab.id}}').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
 
-                                    <div id="id:collab.id" class="modal">
-                                        <span onclick="document.getElementById('id:collab.id').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <div id="{{collab.id}}" class="modal">
+                                        <span onclick="document.getElementById('{{collab.id}}').style.display='none'" class="close" title="Close Modal">&times;</span>
                                         <form class="modal-content">
                                             <div class="container">
                                                 <h1>Confirmation de la suppression</h1>
                                                 <p>Etes-vous sûr de vouloir supprimer ?</p>
 
                                                 <div>
-                                                    <button type="button">    <a href="{{ path('index-collab') }}"> Annuler  </a> </button>
-                                                    <button type="button"> <a href={{ path('delete-collab', {id:collab.id}) }}> r nn </a> </button>
+                                                    <button type="button">    <a href="{{ path('index-collab') }}"> Annuler</a></button>
+                                                    <button type="button"> <a href={{ path('delete-collab', {id:collab.id}) }}> Oui, supprimer !</a></button>
                                                 </div>
                                             </div>
                                         </form>
@@ -63,11 +62,5 @@
             </div>
         </div>
     </div>
-
-
-
-    {#<a href="{{ path('detailscollab-collab', {id:collab.id}) }}"> Détails</a><br><br>#}
-
-
 
 {% endblock %}

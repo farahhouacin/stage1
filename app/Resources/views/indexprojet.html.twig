@@ -36,12 +36,11 @@
                                 <td>{{ projet.dateFin|date('d/m/Y') }}</td>
                                 <td>
                                     <a href={{ path('edit-projet', {id:projet.id}) }}><i class="fa fa-edit" style="color:orange"></i></a>
-{#                                    <a href={{ path('delete-projet', {id:projet.id}) }}><i class="fa fa-trash-alt"></i></a>#}
 
-                                    <button onclick="document.getElementById('id:projet.id').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
+                                    <button onclick="document.getElementById('{{projet.id}}').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
 
-                                    <div id="id:projet.id" class="modal">
-                                        <span onclick="document.getElementById('id:projet.id').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <div id="{{projet.id}}" class="modal">
+                                        <span onclick="document.getElementById('{{projet.id}}').style.display='none'" class="close" title="Close Modal">&times;</span>
                                         <form class="modal-content">
                                             <div class="container">
                                                 <h1>Confirmation de la suppression</h1>

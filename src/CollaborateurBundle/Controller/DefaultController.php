@@ -153,6 +153,7 @@ class DefaultController extends Controller
      */
     public function deleteRole($id)
     {
+
         $em = $this->getDoctrine()->getManager();
         $role = $em->getRepository('CollaborateurBundle:Role')->find($id);
         $em->remove($role);
