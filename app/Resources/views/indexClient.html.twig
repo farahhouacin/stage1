@@ -29,7 +29,7 @@
                                 </tr>
                                 </thead>
                                 {% for client in clients %}
-                                {{ loop.index }}
+
                                 <tr>
                                     <td>
                                         <a href="{{ path ('details-client',{id:client.id}) }}">{{ client.nameClient }}</a>

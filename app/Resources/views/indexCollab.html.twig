@@ -30,6 +30,9 @@
 
                         {% for collab in collabs %}
                             <tr>
+                                <td>
+                                    <a href="{{ path ('details-collab',{id:collab.id}) }}">{{ collab.nameCollab }}</a>
+                                </td>
                                 <td>{{ collab.nameCollab }}</td>
                                 <td>{{ collab.firstnameCollab }}</td>
                                 <td>{{ collab.emailCollab }}</td>
