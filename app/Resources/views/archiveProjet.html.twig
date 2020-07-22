@@ -33,8 +33,24 @@
                         <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
                         <td>{{ projet.dateFin|date('d/m/Y') }}</td>
                             <td>
-                                <a href={{ path('edit-projet', {id:projet.id}) }}><i class="fa fa-edit"></i></a>
-                                <a href={{ path('delete-projet', {id:projet.id}) }}><i class="fa fa-trash"></i></a>
+                                <a href={{ path('edit-projet', {id:projet.id}) }}><i class="fa fa-edit" style="color:orange"></i></a>
+
+                                <button onclick="document.getElementById('{{projet.id}}').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
+
+                                <div id="{{projet.id}}" class="modal">
+                                    <span onclick="document.getElementById('{{projet.id}}').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <form class="modal-content">
+                                        <div class="container">
+                                            <h1>Confirmation de la suppression</h1>
+                                            <p>Etes-vous sûr de vouloir supprimer ?</p>
+
+                                            <div>
+                                                <button type="button">    <a href="{{ path('index-projet') }}"> Annuler  </a> </button>
+                                                <button type="button"> <a href={{ path('delete-projet', {id:projet.id}) }}> Oui, supprimer  </a> </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </td>
                         <tr>
                         {% endfor %}
