@@ -34,7 +34,7 @@
 }
 
 .farah {
-  background-color: green;
+  background-color: mediumseagreen;
   border: black;
   color: white;
   margin: 10px;
@@ -46,7 +46,7 @@
   cursor: pointer;
 }
 .farah:hover {
-  background-color: seagreen;
+  background-color: lightseagreen;
   color: white;
 }
 
