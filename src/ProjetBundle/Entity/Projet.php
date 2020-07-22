@@ -26,7 +26,7 @@ class Projet
     private $collabs;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ProjetBundle\Entity\Etat", inversedBy="projets")
+     * @ORM\ManyToMany(targetEntity="ProjetBundle\Entity\Etat", inversedBy="projets")
      * @ORM\JoinColumn(name="etat_projet", referencedColumnName="id")
      */
     private $etats;
@@ -434,24 +434,36 @@ class Projet
         return $this->collabs;
     }
 
+
+
     /**
-     * Set etats
+     * Add etat
      *
-     * @param \ProjetBundle\Entity\Etat $etats
+     * @param \ProjetBundle\Entity\Etat $etat
      *
      * @return Projet
      */
-    public function setEtats(\ProjetBundle\Entity\Etat $etats = null)
+    public function addEtat(\ProjetBundle\Entity\Etat $etat)
     {
-        $this->etats = $etats;
+        $this->etats[] = $etat;
 
         return $this;
     }
 
     /**
+     * Remove etat
+     *
+     * @param \ProjetBundle\Entity\Etat $etat
+     */
+    public function removeEtat(\ProjetBundle\Entity\Etat $etat)
+    {
+        $this->etats->removeElement($etat);
+    }
+
+    /**
      * Get etats
      *
-     * @return \ProjetBundle\Entity\Etat
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getEtats()
     {

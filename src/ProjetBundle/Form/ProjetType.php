@@ -51,7 +51,7 @@ class ProjetType extends AbstractType
             ->add('etats', EntityType::class, [
                 'class' => 'ProjetBundle:Etat',
                 'choice_label' => 'name_etat',
-                'multiple' => false
+                'multiple' => true
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer',

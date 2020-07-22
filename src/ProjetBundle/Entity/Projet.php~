@@ -26,7 +26,7 @@ class Projet
     private $collabs;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ProjetBundle\Entity\Etat", inversedBy="projets")
+     * @ORM\ManyToMany(targetEntity="ProjetBundle\Entity\Etat", inversedBy="projets")
      * @ORM\JoinColumn(name="etat_projet", referencedColumnName="id")
      */
     private $etats;
@@ -433,4 +433,6 @@ class Projet
     {
         return $this->collabs;
     }
+
+
 }

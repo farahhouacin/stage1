@@ -22,6 +22,8 @@
                                     <th>Hébergement</th>
                                     <th>Préprod</th>
                                     <th>URL</th>
+                                    <th>Collaborateurs</th>
+                                    <th>Etat(s) du projet</th>
                                 </tr>
                                 </thead>
 
@@ -36,6 +38,12 @@
                                     <td>{{ projet.hebergement }}</td>
                                     <td>{{ projet.preprod }}</td>
                                     <td>{{ projet.url }}</td>
+                                    <td>{% for collab in projet.collabs %}
+                                            {{ collab.nameCollab }}<br>
+                                        {% endfor %}</td>
+                                    <td>{% for etat in projet.etats %}
+                                        {{ etat.nameEtat }}<br>
+                                    {% endfor %}</td>
 
                                 </tr>
                                 <br><br>
