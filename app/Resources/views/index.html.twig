@@ -96,7 +96,6 @@
                                 {% for client in clients %}
 {#                                    {{ dump(client) }}#}
                                     <tr>
-
                                         <td>
                                             <a href="{{ path ('details-client',{id:client.id}) }}">{{ client.nameClient }}</a>
                                         </td>
@@ -105,9 +104,10 @@
                                             <td>
                                                 <a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a>
                                             </td>
-                                            <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
+                                            <td>{{ projet.dateButoir|date('d/m/Y') }}</td><br>
+                                            </tr>
                                         {% endfor %}
-                                    </tr>
+
                                 {% endfor %}
                             </table>
                         </div>
@@ -137,7 +137,7 @@
                                             <td>
                                                 <a href="{{ path ('details-projet',{id:projet.id}) }}">{{ projet.nameProjet }}</a>
                                             </td>
-                                            <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
+                                            <td>{{ projet.dateUpdate|date('d/m/Y') }}</td>
                                             <td>{{ projet.dateFin|date('d/m/Y') }}</td>
                                         </tr>
                                     {% endfor %}

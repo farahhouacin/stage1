@@ -10,49 +10,64 @@
                     <div class="white-box">
                         <h3 class="box-title">Fiche projet</h3>
                         <div class="table-responsive">
-                            <table class="table ">
-                                <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Description</th>
-                                    <th>Date de début</th>
-                                    <th>Date de fin</th>
-                                    <th>Date butoir</th>
-                                    <th>Fonctionnalité</th>
-                                    <th>Hébergement</th>
-                                    <th>Préprod</th>
-                                    <th>URL</th>
-                                    <th>Collaborateurs</th>
-                                    <th>Etat(s) du projet</th>
-                                </tr>
-                                </thead>
-
-                                <tr>
-
-                                    <td>{{ projet.nameProjet }}</td>
-                                    <td>{{ projet.description }}</td>
-                                    <td>{{ projet.dateDebut|date('d/m/Y') }}</td>
-                                    <td>{{ projet.dateFin|date('d/m/Y') }}</td>
-                                    <td>{{ projet.dateButoir|date('d/m/Y') }}</td>
-                                    <td>{{ projet.fonctionnalite }}</td>
-                                    <td>{{ projet.hebergement }}</td>
-                                    <td>{{ projet.preprod }}</td>
-                                    <td>{{ projet.url }}</td>
-                                    <td>{% for collab in projet.collabs %}
-                                            {{ collab.nameCollab }}<br>
-                                        {% endfor %}</td>
-                                    <td>{% for etat in projet.etats %}
-                                        {{ etat.nameEtat }}<br>
-                                    {% endfor %}</td>
-
-                                </tr>
-                                <br><br>
-
-                            </table>
-
-                            <a href="{{ path('index-projet') }}" class="farah">Retour</a>
-
                         </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="white-box">
+                            {# <div class="amande"> #}
+                            <form class="form-horizontal form-material">
+                                <div class="form-group">
+                                    <label>Nom</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.nameProjet }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Description</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.description }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Date de début</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.dateDebut|date('d/m/Y') }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Date de fin</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.dateFin|date('d/m/Y') }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Date butoir</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.dateButoir|date('d/m/Y') }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Hébergement</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.hebergement }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Preprod</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.preprod }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">URL</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.url }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Fonctionlités</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="{{ projet.fonctionalite }}" class="form-control form-control-line"> </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <a href="{{ path('index-projet') }}" class="hari">Retour</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>>
                     </div>
                 </div>
             </div>

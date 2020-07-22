@@ -8,32 +8,40 @@
             <div class="col-sm-12">
                 <div class="white-box">
                     <h3 class="box-title">Fiche collaborateur</h3>
-                    <div class="table-responsive">
-                        <table class="table ">
-                            <thead>
-                            <tr>
-                                <th>NOM</th>
-                                <th>Prénom</th>
-                                <th>Numéro de téléphone</th>
-                                <th>Adresse e-mail</th>
-                            </tr>
-                            </thead>
-
-                            <tr>
-                                    <td>{{ collab.nameCollab }} </td>
-                                    <td>{{ collab.firstnameCollab }}</td>
-                                    <td>{{ collab.telCollab }}</td>
-                                    <td>{{ collab.emailcollab}} </td>
-                            </tr>
-
-                        </table>
-
-
-                        <a href="{{ path('index-collab') }}" class="farah">Retour</a>
-
-
-                    </div>
                 </div>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+                <div class="white-box">
+                    {# <div class="amande"> #}
+                    <form class="form-horizontal form-material">
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <div class="col-md-12">
+                                <input type="text" placeholder="{{ collab.nameCollab }}" class="form-control form-control-line"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Prénom</label>
+                            <div class="col-md-12">
+                                <input type="text" placeholder="{{ collab.firstnameCollab }}" class="form-control form-control-line"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-email" class="col-md-12">Email</label>
+                            <div class="col-md-12">
+                                <input type="email" placeholder="{{ collab.emailCollab }}" class="form-control form-control-line" name="example-email" id="example-email"> </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12">Numéro</label>
+                            <div class="col-md-12">
+                                <input type="text" placeholder="{{ collab.telCollab }}" class="form-control form-control-line"> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                 <a href="{{ path('index-collab') }}" class="hari">Retour</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>>
             </div>
         </div>
     </div>
