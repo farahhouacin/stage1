@@ -17,14 +17,12 @@ class Collab
 {
 
     /**
-     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", inversedBy="collabs")
-     * @JoinTable(name="collabs_roles")
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Role", mappedBy="collabs")
      */
     private $roles;
 
     /**
-     * @ManyToMany(targetEntity="ProjetBundle\Entity\Projet", inversedBy="collabs")
-     * @JoinTable(name="projets_collabs")
+     * @ManyToMany(targetEntity="ProjetBundle\Entity\Projet", mappedBy="collabs")
      */
     private $projets;
 
@@ -222,41 +220,6 @@ class Collab
     }
 
 
-    /**
-     * Add projet
-     *
-     * @param \ProjetBundle\Entity\Projet $projet
-     *
-     * @return Collab
-     */
-    public function addProjet(\ProjetBundle\Entity\Projet $projet)
-    {
-        $this->projets[] = $projet;
-
-        return $this;
-    }
-
-    /**
-     * Remove projet
-     *
-     * @param \ProjetBundle\Entity\Projet $projet
-     */
-    public function removeProjet(\ProjetBundle\Entity\Projet $projet)
-    {
-        $this->projets->removeElement($projet);
-    }
-
-    /**
-     * Get projets
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProjets()
-    {
-        return $this->projets;
-    }
-
-
 
     /**
      * Add role
@@ -324,5 +287,39 @@ class Collab
     public function getFonctions()
     {
         return $this->fonctions;
+    }
+
+    /**
+     * Add projet
+     *
+     * @param \ProjetBundle\Entity\Projet $projet
+     *
+     * @return Collab
+     */
+    public function addProjet(\ProjetBundle\Entity\Projet $projet)
+    {
+        $this->projets[] = $projet;
+
+        return $this;
+    }
+
+    /**
+     * Remove projet
+     *
+     * @param \ProjetBundle\Entity\Projet $projet
+     */
+    public function removeProjet(\ProjetBundle\Entity\Projet $projet)
+    {
+        $this->projets->removeElement($projet);
+    }
+
+    /**
+     * Get projets
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProjets()
+    {
+        return $this->projets;
     }
 }

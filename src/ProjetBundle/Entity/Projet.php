@@ -21,13 +21,14 @@ class Projet
     private $client;
 
     /**
-     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", mappedBy="projets")
+     * @ManyToMany(targetEntity="CollaborateurBundle\Entity\Collab", inversedBy="projets")
+     * @ORM\JoinTable(name="projets_collabs")
      */
     private $collabs;
 
     /**
      * @ORM\ManyToMany(targetEntity="ProjetBundle\Entity\Etat", inversedBy="projets")
-     * @ORM\JoinColumn(name="etat_projet", referencedColumnName="id")
+     * @ORM\JoinColumn(name="etat_projet")
      */
     private $etats;
 
@@ -400,39 +401,7 @@ class Projet
 
 
 
-    /**
-     * Add collab
-     *
-     * @param \CollaborateurBundle\Entity\Collab $collab
-     *
-     * @return Projet
-     */
-    public function addCollab(\CollaborateurBundle\Entity\Collab $collab)
-    {
-        $this->collabs[] = $collab;
 
-        return $this;
-    }
-
-    /**
-     * Remove collab
-     *
-     * @param \CollaborateurBundle\Entity\Collab $collab
-     */
-    public function removeCollab(\CollaborateurBundle\Entity\Collab $collab)
-    {
-        $this->collabs->removeElement($collab);
-    }
-
-    /**
-     * Get collabs
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCollabs()
-    {
-        return $this->collabs;
-    }
 
 
 
@@ -468,5 +437,39 @@ class Projet
     public function getEtats()
     {
         return $this->etats;
+    }
+
+    /**
+     * Add collab
+     *
+     * @param \CollaborateurBundle\Entity\Collab $collab
+     *
+     * @return Projet
+     */
+    public function addCollab(\CollaborateurBundle\Entity\Collab $collab)
+    {
+        $this->collabs[] = $collab;
+
+        return $this;
+    }
+
+    /**
+     * Remove collab
+     *
+     * @param \CollaborateurBundle\Entity\Collab $collab
+     */
+    public function removeCollab(\CollaborateurBundle\Entity\Collab $collab)
+    {
+        $this->collabs->removeElement($collab);
+    }
+
+    /**
+     * Get collabs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCollabs()
+    {
+        return $this->collabs;
     }
 }
