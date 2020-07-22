@@ -42,3 +42,51 @@ display: block;
 </div>
 </body>
 </html>
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="page-wrapper">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title">Fiche client</h3>
+                        <div class="amande">
+                            <div class="table-responsive">
+                                <table class="table ">
+                                    <thead>
+                                    <tr>
+                                        <th>NOM</th>
+                                        <th>Prénom</th>
+                                        <th>Numéro de téléhpone</th>
+                                        <th>Adresse e-mail</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tr>
+                                        <td>{{ client.nameClient }}</td>
+                                        <td>{{ client.firstnameClient }}</td>
+                                        <td>{{ client.telClient }}</td>
+                                        <td>{{ client.emailClient }}</td>
+                                    </tr>
+                                    <br><br>
+
+                                </table>
+                            </div>
+
+                            <a href="{{ path('index-client') }}" class="farah">Retour</a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

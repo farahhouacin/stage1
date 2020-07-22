@@ -117,3 +117,23 @@ modal: true;
   display: block;
 }
 
+.amande{
+  text-align: -webkit-auto;
+  margin: auto;
+  border: 1px solid #663333;
+  width: 498px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: auto;
+  padding: 20px 20px 20px 20px;
+  width: 1000px;
+  border-top: 4px solid white;
+  border-bottom: 1px solid white;
+  border-left: 4px solid white;
+  border-right: 1px solid white;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 100px;
+  box-shadow: 0px 0px 5px #000;
+}
