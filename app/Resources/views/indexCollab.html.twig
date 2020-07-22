@@ -8,9 +8,9 @@
             <h4 class="page-title">Collaborateurs</h4>
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-             <ol class="breadcrumb">
+            <ol class="breadcrumb">
                 <a href="{{ path("new-collab") }}" class="farah">Nouveau Collaborateur</a>
-             </ol>
+            </ol>
         </div>
     </div>
     <div class="row">
@@ -21,9 +21,9 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <td>Nom </td>
-                            <td>Prénom </td>
-                            <td>Email </td>
+                            <td>Nom</td>
+                            <td>Prénom</td>
+                            <td>Email</td>
                             <td>Action</td>
                         </tr>
                         </thead>
@@ -37,21 +37,27 @@
                                 <td>{{ collab.firstnameCollab }}</td>
                                 <td>{{ collab.emailCollab }}</td>
                                 <td>
-                                    <a href={{ path('edit-collab', {id:collab.id}) }}><i class="fa fa-edit" style="color:orange"></i></a>
+                                    <a href={{ path('edit-collab', {id:collab.id}) }}><i class="fa fa-edit"
+                                                                                         style="color:orange"></i></a>
 
 
-                                    <button onclick="document.getElementById('{{collab.id}}').style.display='block'"> <i class="fa fa-trash-alt" style="color:red"></i> </button>
+                                    <button onclick="document.getElementById('{{ collab.id }}').style.display='block'">
+                                        <i class="fa fa-trash-alt" style="color:red"></i></button>
 
-                                    <div id="{{collab.id}}" class="modal">
-                                        <span onclick="document.getElementById('{{collab.id}}').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                    <div id="{{ collab.id }}" class="modal">
+                                        <span onclick="document.getElementById('{{ collab.id }}').style.display='none'"
+                                              class="close" title="Close Modal">&times;</span>
                                         <form class="modal-content">
                                             <div class="container">
                                                 <h1>Confirmation de la suppression</h1>
                                                 <p>Etes-vous sûr de vouloir supprimer ?</p>
 
                                                 <div>
-                                                    <button type="button">    <a href="{{ path('index-collab') }}"> Annuler</a></button>
-                                                    <button type="button"> <a href={{ path('delete-collab', {id:collab.id}) }}> Oui, supprimer !</a></button>
+                                                    <button type="button"><a href="{{ path('index-collab') }}">
+                                                            Annuler</a></button>
+                                                    <button type="button"><a
+                                                                href={{ path('delete-collab', {id:collab.id}) }}> Oui,
+                                                            supprimer !</a></button>
                                                 </div>
                                             </div>
                                         </form>

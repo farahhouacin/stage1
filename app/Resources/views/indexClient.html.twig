@@ -38,20 +38,24 @@
                                     <td>{{ client.telClient }}</td>
                                     <td>{{ client.emailClient }}</td>
                                     <td>
-                                        <a href={{ path('edit-client', {id:client.id}) }}><i class="fa fa-edit"style="color:orange"></i></a>
-                                        <button onclick="document.getElementById('{{client.id}}').style.display='block'">
+                                        <a href={{ path('edit-client', {id:client.id}) }}><i class="fa fa-edit"
+                                                                                             style="color:orange"></i></a>
+                                        <button onclick="document.getElementById('{{ client.id }}').style.display='block'">
                                             <i class="fa fa-trash-alt" style="color:red"></i></button>
 
-                                        <div id="{{client.id}}" class="modal">
-                                            <span onclick="document.getElementById('{{client.id}}').style.display='none'"
+                                        <div id="{{ client.id }}" class="modal">
+                                            <span onclick="document.getElementById('{{ client.id }}').style.display='none'"
                                                   class="close" title="Close Modal">&times;</span>
                                             <form class="modal-content">
                                                 <div class="container">
                                                     <h1>Confirmation de la suppression</h1>
                                                     <p>Etes-vous sûr de vouloir supprimer ?</p>
                                                     <div>
-                                                        <button type="button"><a href="{{ path('index-client') }}">Annuler </a></button>
-                                                        <button type="button"><a href="{{ path('delete-client', {id:client.id})}}">Oui, supprimer </a></button>
+                                                        <button type="button"><a href="{{ path('index-client') }}">Annuler </a>
+                                                        </button>
+                                                        <button type="button"><a
+                                                                    href="{{ path('delete-client', {id:client.id}) }}">Oui,
+                                                                supprimer </a></button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -65,7 +69,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
 
 {% endblock %}
