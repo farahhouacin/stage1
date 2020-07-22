@@ -134,6 +134,17 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/404",name="404")
+     */
+    public function erreur()
+    {
+        $collabs = $this->getDoctrine()->getManager()->getRepository('CollaborateurBundle:Collab')->findAll();
+        return $this->render('404.html.twig', [
+            'collabs' => $collabs,
+        ]);
+    }
+
 
 
 
